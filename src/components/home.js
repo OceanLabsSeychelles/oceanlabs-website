@@ -2,15 +2,18 @@ import React from "react";
 import { Jumbotron, Image, Row, Col, Card, Media } from "react-bootstrap";
 import BrettsMedia from "./brettsMedia";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../media/logo.png";
-import brett from "../media/brett.jpg";
-import daniel from "../media/daniel.png";
-import pcb from "../media/pcb.png";
-import turtle from "../media/turtle.jpg";
-import plot from "../media/pairplot.png";
-import table from "../media/table.jpg";
+
 
 const Home = () => {
+
+  const logo = require("../media/logo.png");
+  const brett = require("../media/brett.jpg");
+  const daniel = require("../media/daniel.png");
+  const pcb = require("../media/pcb.png");
+  const turtle = require("../media/turtle.jpg");
+  const plot = require("../media/pairplot.jpg");
+  const table = require("../media/table.jpg");
+
   let designMedia = {
     title: "Design",
     img: pcb,
