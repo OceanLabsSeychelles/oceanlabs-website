@@ -50,7 +50,7 @@ const Home = () => {
   return (
     <div>
       <Row>
-        <Jumbotron xs={12} fluid>
+        <Jumbotron className="banner" xs={12} fluid>
           <div>
             <h1>Engineered Research Solutions</h1>
             <p>
