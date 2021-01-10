@@ -42,9 +42,7 @@ const Home = () => {
   let affectMedia = {
     title: "Affect",
     img: table,
-    text: `Years of experience with the mathematical analyses, computational
-    techniques, and front-end development makes your experience with
-    your data available available anywhere in real-time.`
+    text: `High quality research drives real change in government policy, the marine environment, and sustainable industry. Let our engineering help you lead the charge.`
   };
 
   return (
