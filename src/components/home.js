@@ -3,7 +3,6 @@ import { Jumbotron, Image, Row, Col, Card, Media } from "react-bootstrap";
 import BrettsMedia from "./brettsMedia";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 const Home = () => {
 
   const logo = require("../media/logo.png");
@@ -62,7 +61,9 @@ const Home = () => {
       </Row>
       <Row>
         <Col xs={12} md={4}>
-          <Image class="photo" src={brett} xs={12} sm={4} rounded fluid />
+          <Image class="photo" loading="lazy" src={brett} xs={12} sm={4} rounded fluid >
+            
+          </Image>
         </Col>
         <Col xs={12} md={4}>
           <Card>
