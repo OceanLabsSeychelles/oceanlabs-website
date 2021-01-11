@@ -1,5 +1,6 @@
 import React from "react";
 import { Jumbotron, Image, Row, Col, Card, Media } from "react-bootstrap";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import BrettsMedia from "./brettsMedia";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -61,9 +62,9 @@ const Home = () => {
       </Row>
       <Row>
         <Col xs={12} md={4}>
-          <Image class="photo" loading="lazy" src={brett} xs={12} sm={4} rounded fluid >
-            
-          </Image>
+          <LazyLoadImage className="photo" loading="lazy" style={{objectPosition: "40% 0%"}} src={brett} xs={12} sm={4} rounded fluid >
+
+          </LazyLoadImage>
         </Col>
         <Col xs={12} md={4}>
           <Card>
@@ -82,7 +83,7 @@ const Home = () => {
           </Card>
         </Col>
         <Col xs={12} md={4}>
-          <Image class="photo" src={daniel} xs={12} sm={4} rounded fluid />
+          <LazyLoadImage className="photo" src={daniel} xs={12} sm={4} rounded fluid />
         </Col>
       </Row>
       <BrettsMedia
