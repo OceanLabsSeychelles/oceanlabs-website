@@ -1,8 +1,8 @@
 import React from "react";
 import { Jumbotron, Image, Row, Col, Card, Media } from "react-bootstrap";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import BrettsMedia from "./brettsMedia";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 
 const Home = () => {
 
@@ -47,13 +47,15 @@ const Home = () => {
     help you lead the charge.`
   };
 
+  let photoStyle = {width: "600px", height: "400px", objectFit: "cover"}
+
   return (
     <div>
       <Row>
         <Jumbotron className="banner" xs={12} fluid>
           <div>
             <h1>Engineered Research Solutions</h1>
-            <p>
+            <p style={{padding: "10px"}}>
               A client-driven firm deploying bleeding-edge hardware, software,
               and analysis tools for researchers and conservation workers in the
               Indian Ocean.
@@ -64,13 +66,20 @@ const Home = () => {
       </Row>
       <Row>
         <Col xs={12} md={4}>
-          <Image class="photo" src={brett} xs={12} sm={4} rounded fluid />
+          <Image
+              loading="lazy"
+              className="photo"
+              src={brett}
+              xs={12} sm={4}
+              rounded
+              fluid >
+          </Image>
         </Col>
         <Col xs={12} md={4}>
-          <Card>
+          <Card className="notCard">
             <Card.Body>
               <Card.Title>
-                <b>Trust</b> & Experience
+                <h2><b>Trust</b> & Experience</h2>
               </Card.Title>
               <Card.Text>
                 We are accustomed to working in fast-paced environments where
@@ -83,9 +92,10 @@ const Home = () => {
           </Card>
         </Col>
         <Col xs={12} md={4}>
-          <Image class="photo" src={daniel} xs={12} sm={4} rounded fluid />
+          <Image className="photo" src={daniel} xs={12} sm={4} rounded fluid />
         </Col>
       </Row>
+      <br/>
       <BrettsMedia
         media={[designMedia, deployMedia, analyzeMedia, affectMedia]}
       ></BrettsMedia>
