@@ -42,7 +42,9 @@ const Home = () => {
   let affectMedia = {
     title: "Affect",
     img: table,
-    text: `High quality research drives real change in government policy, the marine environment, and sustainable industry. Let our engineering help you lead the charge.`
+    text: `High quality research drives real change in government policy, 
+    the marine environment, and sustainable industry. Let our engineering 
+    help you lead the charge.`
   };
 
   return (
