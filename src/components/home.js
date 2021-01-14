@@ -1,7 +1,7 @@
 import React from "react";
-import { Jumbotron, Image, Row, Col, Card, Media } from "react-bootstrap";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Jumbotron, Image, Row, Col, Card } from "react-bootstrap";
 import BrettsMedia from "./brettsMedia";
+import Hero from "./hero";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
@@ -47,10 +47,9 @@ const Home = () => {
     help you lead the charge.`
   };
 
-  let photoStyle = {width: "600px", height: "400px", objectFit: "cover"}
-
   return (
     <div>
+      <Hero/>
       <Row>
         <Jumbotron className="banner" xs={12} fluid>
           <div>
