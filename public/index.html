@@ -21,6 +21,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 	<title>Ocean Labs</title>
+	<!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+	<!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+	<!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+	<script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+
+	<!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+	<script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+
+	<!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+	<script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
+
+	<!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+	<script
+			src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
+			defer
+	></script>
 </head>
 
 <body>

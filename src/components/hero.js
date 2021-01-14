@@ -18,7 +18,7 @@ const Hero = (props) => {
         left: "50%",
         transform: "translate(-50%, -50%)",
         color: "white",
-        background: "rgba(2,46,52,0.8)",
+        background: "rgba(0,0,0,0.6)",
         paddingTop:"3rem",
         paddingLeft:"10px",
         paddingRight:"10px",
@@ -29,8 +29,8 @@ const Hero = (props) => {
     return(
         <Jumbotron style={imageStyle} fluid>
                 <div style={titleStyle}>
-                    <h1>{props.title}</h1>
-                    <p>{props.subtitle}</p>
+                    <h1>{props.titleWeak}<b>{props.titleStrong}</b></h1>
+                    <h5>{props.subtitle}</h5>
                 </div>
         </Jumbotron>
     )

@@ -8,3 +8,9 @@
   height: 400px;
   object-fit: cover;
 }
+
+model-viewer {
+  padding-top: 3rem;
+  width: 100%;
+  height: 40rem;
+}
