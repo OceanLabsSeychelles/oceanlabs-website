@@ -20,8 +20,8 @@ const Hero = (props) => {
         color: "white",
         background: "rgba(2,46,52,0.8)",
         paddingTop:"3rem",
-        paddingLeft:"3rem",
-        paddingRight:"3rem",
+        paddingLeft:"10px",
+        paddingRight:"10px",
         paddingBottom:"1rem",
         borderRadius: "25px"
     }
