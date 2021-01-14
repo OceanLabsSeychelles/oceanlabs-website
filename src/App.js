@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/header";
 import Home from "./components/home";
+import Design from "./components/design";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import fp from "fingerprintjs2";
@@ -49,6 +50,7 @@ export default function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/design" component={Design} />
         </Switch>
       </Router>
     </div>

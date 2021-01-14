@@ -5,7 +5,7 @@ export default function ModelViewer (props){
     const modelStyle = {
         paddingTop: "3rem",
         width: "100%",
-        height:"100vh",
+        height:"90vh",
     }
 
     let [selected, setSelected] = useState(props.models[0]);
@@ -17,6 +17,7 @@ export default function ModelViewer (props){
 
     return(
         <model-viewer
+            style={modelStyle}
             src={selected.value}
             alt="A 3D model of an astronaut"
             auto-rotate

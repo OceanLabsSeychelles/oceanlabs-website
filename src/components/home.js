@@ -2,7 +2,6 @@ import React from "react";
 import { Image, Row, Col, Card } from "react-bootstrap";
 import BrettsMedia from "./brettsMedia";
 import Hero from "./hero";
-import ModelViewer from "./modelViewer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
@@ -14,9 +13,6 @@ const Home = () => {
   const plot = require("../media/pairplot.jpg");
   const table = require("../media/table.jpg");
   const banner = require("../media/banner0.jpg");
-
-  const pcb3 = require("../3dmodels/pcb1.glb");
-  const snorkel = require("../3dmodels/snorkel1.glb");
 
   let designMedia = {
     title: "Design",
@@ -53,10 +49,9 @@ const Home = () => {
 
   return (
     <div>
-
-      <Col>
-        <ModelViewer models={[{label:"Snorkel", value:snorkel},{label:"PCB", value:pcb3}]}/>
-      </Col>
+      <Hero img={banner} titleWeak={"Engineering"} titleStrong={"Solutions:"}
+            subtitle={`We are a client-driven firm deploying leading-edge hardware, software, and analysis tools for researchers and conservation workers in the
+                    Indian Ocean.`}/>
     </div>
   );
 };
