@@ -1,5 +1,5 @@
 import React from "react";
-import { Jumbotron, Image, Row, Col, Card } from "react-bootstrap";
+import { Image, Row, Col, Card } from "react-bootstrap";
 import BrettsMedia from "./brettsMedia";
 import Hero from "./hero";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +13,7 @@ const Home = () => {
   const turtle = require("../media/turtle.jpg");
   const plot = require("../media/pairplot.jpg");
   const table = require("../media/table.jpg");
+  const banner = require("../media/banner0.jpg")
 
   let designMedia = {
     title: "Design",
@@ -49,20 +50,10 @@ const Home = () => {
 
   return (
     <div>
-      <Hero/>
-      <Row>
-        <Jumbotron className="banner" xs={12} fluid>
-          <div>
-            <h1>Engineered Research Solutions</h1>
-            <p style={{padding: "10px"}}>
-              A client-driven firm deploying bleeding-edge hardware, software,
-              and analysis tools for researchers and conservation workers in the
-              Indian Ocean.
-            </p>
-            <Image src={logo} fluid />
-          </div>
-        </Jumbotron>
-      </Row>
+      <Hero img={banner} title={"Engineered Research Solutions"}
+            subtitle={`A client-driven firm deploying leading-edge hardware, software,
+                    and analysis tools for researchers and conservation workers in the
+                    Indian Ocean.`}/>
       <Row>
         <Col xs={12} md={4}>
           <Image

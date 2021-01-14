@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg" variant="dark">
       <Navbar.Brand href="#home">
         Ocean<b>Labs</b>
       </Navbar.Brand>
