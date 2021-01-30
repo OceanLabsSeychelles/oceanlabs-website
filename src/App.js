@@ -7,7 +7,6 @@ import Robot from "./components/robot";
 import PCB from "./components/pcb";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import fp from "fingerprintjs2";
 
 export default function App() {
   return (
@@ -17,7 +16,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/robot" component={Robot} />
-            <Route path="/pcb" component={PCB} />
+          <Route path="/pcb" component={PCB} />
           <Route path="/about" component={About}/>
         </Switch>
       </Router>

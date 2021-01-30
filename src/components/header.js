@@ -25,16 +25,18 @@ const Header = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/about">
+            <LinkContainer to="/about">
             <Nav.Link>About</Nav.Link>
-          </LinkContainer>
-        <NavDropdown title="Capabilities" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/robot">Hardware Design</NavDropdown.Item>
-            <NavDropdown.Item href="/pcb">Electrical Design</NavDropdown.Item>
-            <NavDropdown.Item href="/demo">Software Design</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Deployment</NavDropdown.Item>
-        </NavDropdown>
+            </LinkContainer>
+            <LinkContainer to="/robot">
+                <Nav.Link>Hardware Design</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/pcb">
+                <Nav.Link>Electrical Design</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/about">
+                <Nav.Link>About</Nav.Link>
+            </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
