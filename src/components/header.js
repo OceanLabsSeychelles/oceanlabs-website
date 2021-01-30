@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     const logo = require("../media/logo1.png");
@@ -25,18 +26,20 @@ const Header = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-            <LinkContainer to="/about">
-            <Nav.Link>About</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/robot">
-                <Nav.Link>Hardware Design</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/pcb">
-                <Nav.Link>Electrical Design</Nav.Link>
-            </LinkContainer>
+
+            <NavDropdown title="Capabilities" >
+                <NavLink to="/robot" >
+                    Hardware Design
+                </NavLink><br/>
+                <NavLink to="/pcb">
+                    Electronical Design
+                </NavLink>
+            </NavDropdown>
+
             <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
             </LinkContainer>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>

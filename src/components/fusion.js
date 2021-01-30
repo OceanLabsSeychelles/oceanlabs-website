@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Jumbotron, Row, Col, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Fusion (props){
-
+    const [loaded, setLoaded] = useState("false");
     let iframeStyle= {
         position: "absolute",
         top: "0",
@@ -22,6 +22,10 @@ export default function Fusion (props){
     let contentStyle={
         height:"45vh",
     }
+
+    let loadHandler = () => {
+        setLoaded("true")
+    };
     return(
         <Row className="m-auto align-self-center">
         <Col xs={12} md={3} >
@@ -44,6 +48,7 @@ export default function Fusion (props){
         </Col>
             <Col xs={12} md={9}>
                 <iframe
+                    onLoad={loadHandler}
                     src={props.src}
                     style={iframeStyle}
                     allowfullscreen="true"
