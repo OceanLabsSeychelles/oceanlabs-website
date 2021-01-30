@@ -5,7 +5,7 @@ export default function ModelViewer (props){
     const modelStyle = {
         paddingTop: "3rem",
         width: "100%",
-        height:"90vh",
+        height:"93vh",
     }
 
     let [selected, setSelected] = useState(props.models[0]);

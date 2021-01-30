@@ -1,5 +1,5 @@
 import React from "react";
-import ModelViewer from "./modelViewer";
+import Fusion from "./fusion";
 import { Jumbotron, Row, Col, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -24,6 +24,29 @@ export default function Design (){
         backgroundColor: "#efe8e7",
     }
 
+    let iframeStyle= {
+        position: "absolute",
+        top: "0",
+        left: "0",
+        bottom: "0",
+        right: "0",
+        width: "100%",
+        height: "91vh",
+    }
+
+    const robotSrc = "https://myhub.autodesk360.com/ue2c021aa/shares/public/SH56a43QTfd62c1cd9680b5aadca717ef4b6?mode=embed"
+    const content = "A bunch of random text here.A bunch of random text here. A bunch of random text here."
+    return(
+        <div>
+            <Fusion
+                src={robotSrc}
+                content={content}
+                weakTitle="Hardware"
+                strongTitle="Design"
+            ></Fusion>
+        </div>
+    )
+    /*
     return(
         <div>
         <Row>
@@ -36,4 +59,6 @@ export default function Design (){
         </Row>
         </div>
     );
+    */
+
 }
