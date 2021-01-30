@@ -20,7 +20,7 @@ export default function Fusion (props){
         "width":"100%"};
 
     let contentStyle={
-        height:"54vh",
+        height:"45vh",
     }
     return(
         <Row className="m-auto align-self-center">

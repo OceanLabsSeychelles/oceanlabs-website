@@ -12,6 +12,7 @@ export default function PCB (){
                 content={content}
                 weakTitle="Electronic"
                 strongTitle="Design"
+                subheading="From Concept to Manufacture"
             ></Fusion>
         </div>
     )
