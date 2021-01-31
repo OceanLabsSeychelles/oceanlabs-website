@@ -1,5 +1,5 @@
 import React from "react";
-import Fusion from "./fusion";
+import Embed from "./embed";
 
 
 export default function PCB (){
@@ -7,13 +7,15 @@ export default function PCB (){
     const content = "A bunch of random text here.A bunch of random text here. A bunch of random text here."
     return(
         <div>
-            <Fusion
+            <Embed
                 src={pcbSrc}
                 content={content}
                 weakTitle="Electronic"
                 strongTitle="Design"
-                subheading="From Concept to Manufacture"
-            ></Fusion>
+                subheading="Waterproof GPS Beacon"
+                instructions = "Select the box in the top left corner to view the component tree,
+                        isolate sub-components, and select views of the model"
+            ></Embed>
         </div>
     )
 }

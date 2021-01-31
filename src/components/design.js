@@ -1,5 +1,5 @@
 import React from "react";
-import Fusion from "./fusion";
+import Embed from "./embed";
 import { Jumbotron, Row, Col, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -38,12 +38,12 @@ export default function Design (){
     const content = "A bunch of random text here.A bunch of random text here. A bunch of random text here."
     return(
         <div>
-            <Fusion
+            <Embed
                 src={robotSrc}
                 content={content}
                 weakTitle="Hardware"
                 strongTitle="Design"
-            ></Fusion>
+            ></Embed>
         </div>
     )
     /*

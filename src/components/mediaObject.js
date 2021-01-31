@@ -38,4 +38,4 @@ let affectMedia = {
 
 let mediaObject = [designMedia, deployMedia, analyzeMedia, affectMedia]
 
-export default {affectMedia, analyzeMedia, deployMedia, designMedia };
+export default {affectMedia, analyzeMedia, deployMedia, designMedia, mediaObject };

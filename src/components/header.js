@@ -8,7 +8,7 @@ const Header = () => {
     let navbarStyle = {
         width: "100%",
         whiteSpace: "nowrap",
-        height: "8vh",
+        height: "7vh",
         marginBottom: "0px",
     };
 
@@ -32,7 +32,10 @@ const Header = () => {
                     Hardware Design
                 </NavLink><br/>
                 <NavLink to="/pcb">
-                    Electronical Design
+                    Electronic Design
+                </NavLink><br/>
+                <NavLink to="/sandbox">
+                    Software Design
                 </NavLink>
             </NavDropdown>
 

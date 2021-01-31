@@ -1,5 +1,5 @@
 import React from "react";
-import Fusion from "./fusion";
+import Embed from "./embed";
 
 
 export default function Robot (){
@@ -7,13 +7,15 @@ export default function Robot (){
     const content = "A bunch of random text here.A bunch of random text here. A bunch of random text here."
     return(
         <div>
-            <Fusion
+            <Embed
                 src={robotSrc}
                 weakTitle="Hardware"
                 strongTitle="Design"
-                subheading="From Concept to Manufacture"
+                subheading="Telepresence Robot"
                 content={content}
-            ></Fusion>
+                instructions = "Select the box in the top left corner to view the component tree,
+                        isolate sub-components, and select views of the model"
+            ></Embed>
         </div>
     )
 }

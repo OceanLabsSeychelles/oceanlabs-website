@@ -5,6 +5,7 @@ import Home from "./components/home";
 import About from "./components/about";
 import Robot from "./components/robot";
 import PCB from "./components/pcb";
+import Sandbox from "./components/sandbox";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/robot" component={Robot} />
           <Route path="/pcb" component={PCB} />
           <Route path="/about" component={About}/>
+          <Route path="/sandbox" component={Sandbox}/>
         </Switch>
       </Router>
     </div>
