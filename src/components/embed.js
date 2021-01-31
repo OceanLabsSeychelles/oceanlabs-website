@@ -42,7 +42,7 @@ export default function Embed (props){
                 <Card.Title>
                     <Jumbotron fluid style={titleStyle} >
                         <h1>
-                            {props.weakTitle}<b>{props.strongTitle}</b>
+                            {props.weakTitle} <b>{props.strongTitle}</b>
                         </h1>
                     </Jumbotron>
                     <h3>{props.subheading}</h3>
