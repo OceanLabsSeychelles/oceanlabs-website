@@ -19,10 +19,7 @@ const Home = () => {
 
   let titleStyle = {
     textAlign: "center",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    align: "center",
     color: "black",
     background: "rgba(0,0,0,0.0)",
     paddingBottom: "1rem",
@@ -30,13 +27,12 @@ const Home = () => {
     paddingLeft: "2rem",
     paddingTop: "2rem",
     borderRadius: "25px",
-    fontWeight:"900"
   }
 
   return (
-    <div>
-      <Row style={backgroundImgStyle}>
-        <Col xs={12} sm={6} md={4} style={titleStyle}>
+    <div style={backgroundImgStyle}>
+      <Row className="m-auto align-self-center">
+        <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
           <Card style={{background: "rgba(255,255,255,0.55)",}}>
             <Card.Title>
               <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>

@@ -35,7 +35,7 @@ export default function Embed (props){
 
     return(
         <Row className="m-auto align-self-center">
-        <Col xs={12} md={3} >
+        <Col xs={12} sm={4} >
             <br/>
 
             <Card>
@@ -59,7 +59,7 @@ export default function Embed (props){
 
 
         </Col>
-            <Col xs={12} md={9}>
+            <Col xs={12} sm={8}>
                 <iframe
                     onLoad={loadHandler}
                     src={props.src}
