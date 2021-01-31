@@ -13,6 +13,7 @@ export default function Sandbox (){
                 strongTitle="Design"
                 subheading="A Simple Tide Chart"
                 content={content}
+                instructions="Make sure to scroll down the right window so you can view the whole year."
             ></Embed>
         </div>
     )

@@ -27,7 +27,9 @@ const Header = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
 
-            <NavDropdown title="Capabilities" >
+            <NavDropdown title={
+                <span className="mr-auto">Capabilities</span>
+            } >
                 <NavLink to="/robot" >
                     Hardware Design
                 </NavLink><br/>

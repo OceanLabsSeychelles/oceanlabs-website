@@ -4,50 +4,10 @@ import BrettsCarousel from "./brettCarousel";
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import '../styles.css'
 const Home = () => {
-
-  const pcb = require("../media/pcb.png");
-  const turtle = require("../media/turtle.jpg");
-  const plot = require("../media/pairplot.jpg");
-  const table = require("../media/table.jpg");
-
-  let designMedia = {
-    title: "Design",
-    img: pcb,
-    text: `We will work with you every step of the way to make sure that your
-    project reaches escape velocity. We would love the opportunity to
-    immerse ourselves in the issues and assess the feasibility of all
-    possible solutions.`
-  };
-
-  let deployMedia = {
-    title: "Deploy",
-    img: turtle,
-    text: `Correct deployment is vital for your venture. We can accompany your
-    deployment all the way and will assist you to the end of the
-    projects lifecycle.`
-  };
-
-  let analyzeMedia = {
-    title: "Analyze",
-    img: plot,
-    text: `Years of experience with the mathematical analyses, computational
-    techniques, and front-end development makes your experience with
-    your data available available anywhere in real-time.`
-  };
-
-  let affectMedia = {
-    title: "Affect",
-    img: table,
-    text: `High quality research drives real change in government policy, 
-    the marine environment, and sustainable industry. Let our engineering 
-    help you lead the charge.`
-  };
-
-  let mediaObject = [designMedia, deployMedia, analyzeMedia, affectMedia]
-
+  const logo = require("../media/logo1.png");
   const banner = require("../media/banner2.jpg");
 
-  let imageStyle = {
+  let backgroundImgStyle = {
     color: "white",
     backgroundImage: `url(${banner})`,
     backgroundPosition: "center",
@@ -63,24 +23,30 @@ const Home = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    color: "white",
-    background: "rgba(0,0,0,0.7)",
+    color: "black",
+    background: "rgba(0,0,0,0.0)",
     paddingBottom: "1rem",
     paddingRight: "2rem",
     paddingLeft: "2rem",
     paddingTop: "2rem",
     borderRadius: "25px",
+    fontWeight:"900"
   }
 
   return (
     <div>
-      <Row style={imageStyle}>
-        <Col xs={12}>
-        <Jumbotron fluid style={titleStyle}>
-          <h1 style={{padding:"1rem"}}>Engineering<b>Solutions</b></h1>
-          <p style={{padding:"1rem"}}>We deploy leading-edge hardware, software, and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
+      <Row style={backgroundImgStyle}>
+        <Col xs={12} sm={6} md={4} style={titleStyle}>
+          <Card style={{background: "rgba(255,255,255,0.55)",}}>
+            <Card.Title>
+              <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
+            </Card.Title>
+            <Card.Img class="img-responsive center-block"  src={logo}/>
+            <Card.Body>
+              <p style={{padding:"1rem"}}>We deploy leading-edge hardware, software, and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
+            </Card.Body>
+          </Card>
           <br/>
-        </Jumbotron>
         </Col>
       </Row>
     </div>

@@ -1,10 +1,4 @@
 .App {
-  font-family: roboto;
+  font-family: system-ui;;
   text-align: center;
-}
-
-.photo {
-  width: 600px;
-  height: 400px;
-  object-fit: cover;
 }

@@ -45,9 +45,10 @@ export default function Embed (props){
                             {props.weakTitle}<b>{props.strongTitle}</b>
                         </h1>
                     </Jumbotron>
+                    <h3>{props.subheading}</h3>
                 </Card.Title>
                 <Card.Body>
-                    <h3 style={{textAlign:"left"}}>{props.subheading}</h3>
+
                     <p style={{textAlign:"left"}}>{props.content}</p>
                     <p style={{textAlign:"left"}}><i>{props.instructions}</i></p>
                 </Card.Body>
