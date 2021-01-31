@@ -21,21 +21,21 @@ export default function Embed (props){
         width:"span",
     };
 
-    let cardStyle={
-        width:"15rem",
-        align:"center",
-    }
-    let contentStyle = {
-
-    }
-
     let loadHandler = () => {
         setLoaded("true")
     };
 
+    function renderContent() {
+        return props.content.map((item, index) => {
+            return(
+                <p style={{textAlign:"left"}}>{item}</p>
+            );
+        });
+    }
+
     return(
         <Row className="m-auto align-self-center">
-        <Col xs={12} sm={4} >
+        <Col xs={12} sm={3} >
             <br/>
 
             <Card>
@@ -48,8 +48,7 @@ export default function Embed (props){
                     <h3>{props.subheading}</h3>
                 </Card.Title>
                 <Card.Body>
-
-                    <p style={{textAlign:"left"}}>{props.content}</p>
+                    {renderContent()}
                     <p style={{textAlign:"left"}}><i>{props.instructions}</i></p>
                 </Card.Body>
             </Card>
@@ -59,7 +58,7 @@ export default function Embed (props){
 
 
         </Col>
-            <Col xs={12} sm={8}>
+            <Col xs={12} sm={9}>
                 <iframe
                     onLoad={loadHandler}
                     src={props.src}
