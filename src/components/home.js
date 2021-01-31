@@ -13,7 +13,7 @@ const Home = () => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    height: "92vh",
+    height: "100vh",
     padding: "0",
   };
 
