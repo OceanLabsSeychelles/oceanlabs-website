@@ -75,11 +75,13 @@ const Home = () => {
   return (
     <div>
       <Row style={imageStyle}>
+        <Col xs={12}>
         <Jumbotron fluid style={titleStyle}>
-          <h1 style={{padding:"20px"}}>Engineering<b>Solutions</b></h1>
-          <p>We deploy leading-edge hardware, software, and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
+          <h1 style={{padding:"1rem"}}>Engineering<b>Solutions</b></h1>
+          <p style={{padding:"1rem"}}>We deploy leading-edge hardware, software, and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
           <br/>
         </Jumbotron>
+        </Col>
       </Row>
     </div>
   );
