@@ -41,7 +41,7 @@ const Home = () => {
             </Card.Title>
             <Card.Img class="img-responsive center-block"  src={logo}/>
             <Card.Body>
-              <p style={{padding:"1rem"}}>We deploy leading-edge hardware, software, and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
+              <p style={{padding:"1rem"}}>We deploy leading-edge hardware, software and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
             </Card.Body>
           </Card>
           <br/>
