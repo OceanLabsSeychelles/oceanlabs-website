@@ -21,8 +21,8 @@ let designMedia = {
 let deployMedia = {
     title: "Deploy",
     img: turtle,
-    text: `Correct deployment is vital for your venture. We can accompany your
-    deployment all the way and will assist you all the way up the end of your
+    text: `Correct deployment and support are vital for your venture. We will accompany your
+    deployment and will assist you all the way up the end of your
     project's lifecycle.`
 };
 
