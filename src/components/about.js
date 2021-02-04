@@ -1,8 +1,7 @@
-import React from "react";
-import BrettsMedia from "./brettsMedia";
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import {MDBCol, MDBMask, MDBRow, MDBView} from "mdbreact";
+import React from "react";
+import BrettsMedia from "./brettsMedia";
 
 
 const pcb = require("../media/pcb.png");
@@ -15,7 +14,7 @@ let designMedia = {
     img: pcb,
     text: `We will work with you every step of the way to make sure that your
     project reaches escape velocity. We would love the opportunity to
-    immerse ourselves in the issues and assess the feasibility of all
+    immerse ourselves in the challenges and assess the feasibility of all
     possible solutions.`
 };
 
@@ -23,24 +22,24 @@ let deployMedia = {
     title: "Deploy",
     img: turtle,
     text: `Correct deployment is vital for your venture. We can accompany your
-    deployment all the way and will assist you to the end of the
-    projects lifecycle.`
+    deployment all the way and will assist you all the way up the end of your
+    project's lifecycle.`
 };
 
 let analyzeMedia = {
-    title: "Analyze",
+    title: "Analyse",
     img: plot,
-    text: `Years of experience with the mathematical analyses, computational
-    techniques, and front-end development makes your experience with
-    your data available available anywhere in real-time.`
+    text: `Years of experience with  mathematical analysis, computational
+    algorithms, and front-end development will make your experience with
+    your data available anywhere, in real-time.`
 };
 
 let affectMedia = {
     title: "Affect",
     img: table,
-    text: `High quality research drives real change in government policy, 
-    the marine environment, and sustainable industry. Let our engineering 
-    help you lead the charge.`
+    text: `High quality research can drive real change in government policy, 
+    the marine environment, as well as creating the basis for sustainable industries. 
+    Let our engineering skills help you lead the charge.`
 };
 
 
