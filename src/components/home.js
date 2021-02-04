@@ -1,8 +1,10 @@
-import React from "react";
-import {Jumbotron, Col, Row, Card} from "react-bootstrap";
-import BrettsCarousel from "./brettCarousel";
+
+// Content for the OceanLab's "Home" page
+
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import '../styles.css'
+import React from "react";
+import { Card, Col, Row } from "react-bootstrap";
+import '../styles.css';
 const Home = () => {
   const logo = require("../media/logo1.png");
   const banner = require("../media/banner2.jpg");
