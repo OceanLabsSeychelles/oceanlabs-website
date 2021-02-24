@@ -1,7 +1,8 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Header = () => {
     const logo = require("../media/logo1.png");
@@ -24,29 +25,18 @@ const Header = () => {
          Ocean<b>Labs</b>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-
-            <NavDropdown title={
-                <span className="mr-auto">Capabilities</span>
-            } >
-                <NavLink to="/robot" >
-                    Hardware Design
-                </NavLink><br/>
-                <NavLink to="/pcb">
-                    Electronic Design
-                </NavLink><br/>
-                <NavLink to="/sandbox">
-                    Software Design
-                </NavLink>
-            </NavDropdown>
-
-            <LinkContainer to="/about">
-                <Nav.Link>About</Nav.Link>
-            </LinkContainer>
-
-        </Nav>
-      </Navbar.Collapse>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+                <NavDropdown title="Capabilities" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/pcb">Electronic Design</NavDropdown.Item>
+                    <NavDropdown.Item href="/robot">Mechanical Design</NavDropdown.Item>
+                    <NavDropdown.Item href="/sandbox">Software Design</NavDropdown.Item>
+                </NavDropdown>
+                <LinkContainer to="/about">
+                    <Nav.Link>About</Nav.Link>
+                </LinkContainer>
+            </Nav>
+          </Navbar.Collapse>
     </Navbar>
 
 

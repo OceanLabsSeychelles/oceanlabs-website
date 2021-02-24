@@ -16,7 +16,7 @@ export default function Robot (){
 
     let p1 = `We are familiar with the latest mechanical design and manfacturing techologies -
     and while we are experienced with deploying and operating custom systems literally half-way around the world, 
-    we also understand the issues involved with importing and adapting new design paradigms to tropical islands like the Seychelles`
+    we also understand the issues involved with importing and adapting new design paradigms to tropical islands like the Seychelles.`
 
     const modelStyle = {
         paddingTop: "3rem",
