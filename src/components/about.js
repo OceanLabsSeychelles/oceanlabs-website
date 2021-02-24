@@ -1,16 +1,17 @@
 
 // Content for the OceanLab's "About" page
 
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+
 import React from "react";
 import BrettsMedia from "./brettsMedia";
-
+import {Row, Col, Card, Button} from "react-bootstrap";
 
 const pcb = require("../media/pcb.png");
 const turtle = require("../media/turtle.jpg");
 const plot = require("../media/pairplot.jpg");
 const table = require("../media/table.jpg");
+const daniel = require("../media/daniel.png");
+const brett = require("../media/brett.jpg");
 
 let designMedia = {
     title: "Design",
@@ -46,11 +47,39 @@ let affectMedia = {
 };
 
 
+
+const selfieStyle = {
+    padding:"10px",
+    width:"100%",
+    height:"100%",
+    borderRadius:"15px"
+}
+
 const About = () => {
     let media = [designMedia, deployMedia, analyzeMedia, affectMedia]
     return (
         <div>
-            <BrettsMedia media={media}/>
+            <Row>
+                <BrettsMedia media={media}/>
+            </Row>
+            <div class="bg-dark text-light">
+                <br/>
+                <Row>
+                    <Col xs={12} md={4}>
+                        <img style={selfieStyle} src={daniel} />
+                    </Col>
+                    <Col xs={12} md={4}>
+                        <h1>Made to create</h1>
+                        <p>Some personal facts about us here.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <Button variant="info">Contact Us</Button>
+                    </Col>
+                    <Col xs={12} md={4}>
+                        <img style={selfieStyle} src={brett} />
+                    </Col>
+
+                </Row>
+            </div>
         </div>
     );
 };
