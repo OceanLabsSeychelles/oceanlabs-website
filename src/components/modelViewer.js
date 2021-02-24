@@ -6,7 +6,7 @@ export default function ModelViewer (props){
     const modelStyle = {
         paddingTop: "3rem",
         width: "100%",
-        height:"93vh",
+        height:"91vh",
     }
     const titleStyle={background:"linear-gradient(\n          90deg,\n          rgba(0, 139, 139, 1) 0%,\n          rgba(188, 209, 255, 1) 100%\n  )",
         paddingTop:"1.5rem",
@@ -21,6 +21,7 @@ export default function ModelViewer (props){
             );
         });
     }
+    let i = 0;
 
     return(
         <Row className="m-auto align-self-center">
@@ -51,6 +52,7 @@ export default function ModelViewer (props){
                 <model-viewer
                     style={modelStyle}
                     src={props.src}
+                    poster={props.posters[0]}
                     alt="A 3D model of an astronaut"
                     auto-rotate
                     camera-controls
