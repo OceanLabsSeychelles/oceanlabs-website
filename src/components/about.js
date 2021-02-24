@@ -52,7 +52,8 @@ const selfieStyle = {
     padding:"10px",
     width:"100%",
     height:"100%",
-    borderRadius:"15px"
+    borderRadius:"15px",
+    maxWidth:"500px"
 }
 
 const About = () => {
@@ -72,7 +73,7 @@ const About = () => {
                         <h1>Made to create</h1>
                         <p>Some personal facts about us here.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <Button variant="info">Contact Us</Button>
+                        <Button variant="primary">Contact Us</Button>
                     </Col>
                     <Col xs={12} md={4}>
                         <img style={selfieStyle} src={brett} />
