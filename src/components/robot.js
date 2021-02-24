@@ -21,7 +21,7 @@ export default function Robot (){
     const modelStyle = {
         paddingTop: "3rem",
         width: "100%",
-        height:"91vh",
+        height:"85vh",
     }
     const titleStyle={background:"linear-gradient(\n          90deg,\n          rgba(0, 139, 139, 1) 0%,\n          rgba(188, 209, 255, 1) 100%\n  )",
         paddingTop:"1.5rem",
@@ -63,7 +63,7 @@ export default function Robot (){
                             {p1}
                         </p>
                         <p style={{textAlign:"left"}}>
-                            This page shows a robot design completed for <a href="www.slslab.com">SLAB</a>, a Neuroscience & Neurongineering Labratory at California's University at Santa Barbara.
+                            Here is a robot design completed for <a href="www.slslab.com">SLAB</a>, a Neuroscience & Neurongineering Labratory at California's University at Santa Barbara.
                             The robot worked in conjunction with their dual-photon microscope and is used for imaging living brain cells in laboratory mice as they solve motion problems.
                         </p>
                         <p style={{textAlign:"left"}}>
