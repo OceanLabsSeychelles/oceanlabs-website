@@ -69,7 +69,7 @@ export default function Robot (){
                         <p style={{textAlign:"left"}}>
                             You can view a video of the robots first design iteartion on <a href="https://hackaday.io/project/158770-labratory-telepresence-robot">hackaday.io</a>
                         </p>
-                        <Button target='_blank' href="https://a360.co/3ozB9T5" variant="warning">Launch Design Review Portal</Button>
+                        <Button target='_blank' href="https://a360.co/3ozB9T5" variant="info">Launch Design Review Portal</Button>
                     </Card.Body>
                 </Card>
                 <br/>
