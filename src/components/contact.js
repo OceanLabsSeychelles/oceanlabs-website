@@ -56,22 +56,25 @@ export default function Contact() {
                            <p style={{textAlign:"left", margin:"0"}}><i>daniel@oceanlabs.io</i></p>
                        </Media.Body>
                    </Media>
+                        <br/>
+                        <h4>Contact Us</h4>
+                        <form id="contact-form">
+                            <div className="form-group">
+                                <input type="text" className="form-control" placeholder="Name"/>
+                            </div>
+                            <div className="form-group">
+                                <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Email Address"/>
+                            </div>
+                            <div className="form-group">
+                                <textarea className="form-control" rows="5" placeholder="Tell us about you and your project :)"></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
                     </Card.Body>
                 </Card>
 
                <br/>
-               <form id="contact-form">
-                   <div className="form-group">
-                       <input type="text" className="form-control" placeholder="Name"/>
-                   </div>
-                   <div className="form-group">
-                       <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Email Address"/>
-                   </div>
-                   <div className="form-group">
-                       <textarea className="form-control" rows="5" placeholder="Tell us about you and your project :)"></textarea>
-                   </div>
-                   <button type="submit" className="btn btn-primary">Submit</button>
-               </form>
+
 
 
            </Col>
