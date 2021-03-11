@@ -3,8 +3,8 @@
 
 
 import React from "react";
+import { Button, Col, Row } from "react-bootstrap";
 import BrettsMedia from "./brettsMedia";
-import {Row, Col, Card, Button} from "react-bootstrap";
 
 const pcb = require("../media/pcb.png");
 const turtle = require("../media/turtle.jpg");
@@ -71,8 +71,8 @@ const About = () => {
                     </Col>
                     <Col xs={12} md={4}>
                         <h1>Made to create</h1>
-                        <p>Some personal facts about us here.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>We are a young team of engineers with a passion for the ocean and the natural beauty of the Seychelles.</p>
+                        <p>OceanLabs Seychelles can be summarized as our drive to grow the unique engineering culture of Seychelles, aligned to our local environment, while at the same time on par with global standards.</p>
                         <Button variant="primary">Contact Us</Button>
                     </Col>
                     <Col xs={12} md={4}>

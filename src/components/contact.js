@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import {Row, Col, Media, Card, Form} from "react-bootstrap";
-import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
-import "../styles.css"
+import { Card, Col, Media, Row } from "react-bootstrap";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import "../styles.css";
 
 export default function Contact() {
     const daniel = require("../media/daniel.png");
@@ -36,7 +36,7 @@ export default function Contact() {
                     />
                     <Media.Body>
                         <h5>Brett Smith</h5>
-                        <p style={{textAlign:"left", margin:"0"}}>WhatsApp: +284-248-3047</p>
+                        <p style={{textAlign:"left", margin:"0"}}>WhatsApp: +248-284-3047</p>
                         <p style={{textAlign:"left", margin:"0"}}><i>brett@oceanlabs.io</i></p>
 
                     </Media.Body>
@@ -52,7 +52,7 @@ export default function Contact() {
                        />
                        <Media.Body>
                            <h5>Daniel Hugelmann</h5>
-                           <p style={{textAlign:"left", margin:"0"}}>WhatsApp: +284-248-3047</p>
+                           <p style={{textAlign:"left", margin:"0"}}>WhatsApp: +248-280-3609</p>
                            <p style={{textAlign:"left", margin:"0"}}><i>daniel@oceanlabs.io</i></p>
                        </Media.Body>
                    </Media>
