@@ -73,7 +73,6 @@ const About = () => {
                         <h1>Made to create</h1>
                         <p>We are a young team of engineers with a passion for the ocean and the natural beauty of the Seychelles.</p>
                         <p>OceanLabs Seychelles can be summarized as our drive to grow the unique engineering culture of Seychelles, aligned to our local environment, while at the same time on par with global standards.</p>
-                        <Button variant="primary">Contact Us</Button>
                     </Col>
                     <Col xs={12} md={4}>
                         <img style={selfieStyle} src={brett} />

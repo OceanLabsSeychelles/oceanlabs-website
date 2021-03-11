@@ -83,7 +83,7 @@ export default function Robot (){
                     style={modelStyle}
                     src={model}
                     poster={poster1}
-                    alt="A 3D model of an astronaut"
+                    alt="A 3D model of our robot"
                     auto-rotate
                     camera-controls
                     exposure="0.4"

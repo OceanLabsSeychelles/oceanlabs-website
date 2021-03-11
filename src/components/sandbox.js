@@ -8,7 +8,8 @@ import Embed from "./embed";
 export default function Sandbox (){
     const codeSrc = "https://codepen.io/waymond91/embed/yLVyYOq?height=308&theme-id=light&default-tab=js,result"
 
-    const content = `I'm really not too attached to this demo, it doesn't really showcase the right tech`
+    const content = `A small demo showing how to roughly forecast one year's worth of tide data and render it 
+    interactively online with javascript.`
     // I commented this out as the page is publicly accessible...
 
     return(
