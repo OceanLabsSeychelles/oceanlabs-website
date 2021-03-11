@@ -13,7 +13,7 @@ export default function Contact() {
     const center = [-4.6796, 55.492];
     const location = [lat, lng];
 
-    const stmUrl = "https://tiles.wmflabs.org/bw-mapnik/${z}/${x}/${y}.png";
+    const stmUrl = "https://maptiles.p.rapidapi.com/en/map/v1/{z}/{x}/{y}.png";
     
     const stmAttr = '&copy; <a href"https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
