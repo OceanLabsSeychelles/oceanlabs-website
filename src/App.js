@@ -156,7 +156,8 @@ export default function App() {
                             </Card.Title>
                             <Card.Text>
                                 Last Probe Update: <Badge bg={'success'}>4 minutes ago</Badge><br/><br/>
-                                Last Service Date: <Badge bg={'warning'}>10/4/22</Badge>
+                                Last Service Date: <Badge bg={'warning'}>1/4/22</Badge><br/><br/>
+                                Last Calibration Date: <Badge bg={'warning'}>10/4/22</Badge>
                             </Card.Text>
                             <Row style={{padding:"0.5em"}}><Button variant={'outline-primary'}>Calibrate</Button></Row>
                             <Row style={{padding:"0.5em"}}><Button variant={'outline-primary'}>Set Thresholds</Button></Row>
