@@ -49,10 +49,8 @@ export default function ResponsivePlot(props) {
             <div
                 style={Styles.BootstrapCenter}
                 ref={myRef}
-            ><Col xs={1} style={Styles.BootstrapCenter}>
-                <p style={{fontSize: '.8em', paddingLeft:'10px'}}>{props.title}</p>
-            </Col>
-                <Col xs={11}>
+            >
+                <Col xs={12}>
                     <XYPlot
                         height={windowSize.height * props.height}
                         width={windowSize.width * props.width}
