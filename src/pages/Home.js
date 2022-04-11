@@ -1,14 +1,19 @@
 import React, {useContext, useEffect, useState} from "react";
-import useAsyncState from "../hooks/useAsyncState";
 import {Badge, Button, ButtonGroup, Card, Col, Row} from "react-bootstrap";
 import Styles from "../components/Styles";
 import ResponsivePlot from "../components/ResponsivePlot";
 import {ProbeContext} from "../context/ProbeProvider";
+import {BackendContext} from "../context/BackendProvider";
 
 export default function Home(){
     const {ProbeStatus, ProbeColor, ProbeVariant, ProbeDisabled} = useContext(ProbeContext)
-    const [data, setData] = useState(generateData(24));
+    const {Probes} = useContext(BackendContext)
+    const [data, setData] = useState(generateZeros(24));
     const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setTimeout(()=>{setData(generateData(24))},3000)
+    }, [])
 
     function handleWindowSizeChange() {
         if (window.innerWidth < 762) {
@@ -16,11 +21,9 @@ export default function Home(){
         } else {
             setIsMobile(false);
         }
-        console.log(isMobile);
     }
 
     useEffect(() => {
-        setData(generateData(24))
         handleWindowSizeChange();
         window.addEventListener('resize', handleWindowSizeChange);
         return () => {
@@ -32,6 +35,13 @@ export default function Home(){
         return [...new Array(num)].map((row, index) => ({
             x: index,
             y: Math.random() * 3 + 5
+        }));
+    }
+
+    function generateZeros(num) {
+        return [...new Array(num)].map((row, index) => ({
+            x: index,
+            y: 0.0
         }));
     }
 
@@ -49,7 +59,7 @@ export default function Home(){
                             <Card.Body style={{textAlign: 'center'}}>
                                 <Card.Title><h2>{props.title}</h2></Card.Title>
                                 <Card.Text>
-                                    <h4>{data[0].y.toFixed(3)}</h4>
+                                    <h4>{props.data[0].y.toFixed(3)}</h4>
                                     <p>{props.units}</p>
                                 </Card.Text>
                             </Card.Body>
@@ -78,7 +88,7 @@ export default function Home(){
                     <Button
                         variant={ProbeVariant.state}
                         onClick={() => {
-                            setData(generateData(24));
+                            setData(generateData(24))
                         }}
                     >
                         {"<"}
@@ -87,7 +97,7 @@ export default function Home(){
                     <Button
                         variant={ProbeVariant.state}
                         onClick={() => {
-                            setData(generateData(24));
+                            setData(generateData(24))
                         }}
                     >
                         {">"}
@@ -130,10 +140,10 @@ export default function Home(){
                 <Col xs={12}  xl={9} style={{height: '95vh'}}>
                     {renderMobileHeader()}
                     <div style={{paddingTop: "1em"}}>
-                        {renderPlotRow({title: 'Temp', units: "C", data: data})}
+                        {renderPlotRow({title: 'Temp', units: "C", data: Probes.temp.data})}
                     </div>
-                    {renderPlotRow({title: 'DO', units: "mg/L", data: data})}
-                    {renderPlotRow({title: 'pH', units: "", data: data})}
+                    {renderPlotRow({title: 'DO', units: "mg/L", data: Probes.do.data})}
+                    {renderPlotRow({title: 'pH', units: "", data: Probes.ph.data})}
                     <Col style={Styles.BootstrapCenter} md={(isMobile === true) ? 12 : 10}>
                         {renderDateButtons()}
                     </Col>
@@ -141,7 +151,7 @@ export default function Home(){
                     </Col>
                 </Col>
                 <Col xs={12} xl={3} style={{...Styles.BootstrapCenter,
-                    backgroundColor:ProbeColor.state,height:'100vh'}}>
+                    backgroundColor:ProbeColor.state,height:'95vh'}}>
                     <Card style={{textAlign:'center'}}>
                         <Card.Body>
                             <Card.Title style={{padding:'1em'}}>

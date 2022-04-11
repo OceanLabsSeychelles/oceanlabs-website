@@ -1,9 +1,10 @@
-import React, {createContext, useEffect} from 'react'
+import React, {createContext, useContext, useEffect} from 'react'
 import useAsyncState from "../hooks/useAsyncState";
-
+import {BackendContext} from "./BackendProvider";
 export const ProbeContext = createContext({});
 
 export const ProbeProvider = ({children}) => {
+    const {Probes} = useContext(BackendContext)
     const bootstrapColors = {
         "primary": "#0275d8",
         "success": "#5cb85c",
@@ -11,15 +12,20 @@ export const ProbeProvider = ({children}) => {
         "danger": "#d9534f",
         "secondary": "lightgray"
     }
-
     const probeStatus = useAsyncState('disconnected')
     const probeColor = useAsyncState(bootstrapColors.secondary)
     const probeVariant = useAsyncState('secondary')
     const probeDisabled = useAsyncState(false);
 
     useEffect(() => {
-        setTimeout(()=>{probeStatus.setState('connected')},1000)
-    }, [])
+        if(probeStatus.state === 'disabled')return
+        if(Probes.do.outOfRange || Probes.temp.outOfRange || Probes.ph.outOfRange){
+            probeStatus.setState('danger')
+        }
+        else if(Probes.do.ready && Probes.temp.ready && Probes.ph.ready){
+            probeStatus.setState('connected')
+        }
+    }, [Probes.do,Probes.temp,Probes.ph])
 
     useEffect(() => {
         if(probeStatus.state !== 'danger' && probeStatus.state !== 'disconnected'){
@@ -29,7 +35,7 @@ export const ProbeProvider = ({children}) => {
                 probeStatus.setState('disabled')
             }
         }
-    }, [probeDisabled.state])
+    }, [probeDisabled.state, probeStatus.state])
 
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Header() {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar style={{height:'5vh'}} bg="dark" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">
                     <b>SURF</b>Pilot
