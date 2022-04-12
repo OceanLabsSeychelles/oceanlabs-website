@@ -25,7 +25,13 @@ export default function Facility() {
 
     function renderProbes() {
         return (
-            probes.map(probe => {
+            probes.map((probe, index) => {
+                const _do = (index === 3)?6.5:(Math.random()+8.1).toFixed(3)
+                let color = {}
+                if (index===3){
+                    color={backgroundColor:'#d9534f'}
+                }
+
                 return (
                     <Row className={'bg-light'}
                          style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10}}>
@@ -38,14 +44,14 @@ export default function Facility() {
                             Probe Name
                         </Col>}
                         <Col xs={8} sm={6} style={Styles.BootstrapCenter}>
-                            <Col xs={4} style={Styles.facililitesCol}>
-                                DO: {(Math.random()+8.1).toFixed(3)}
+                            <Col xs={4} style={{...Styles.facililitesCol,...color}}>
+                                {_do}
                             </Col>
                             <Col xs={4} style={Styles.facililitesCol}>
-                                Temp: {(Math.random()+26).toFixed(3)}
+                                {(Math.random()+26).toFixed(3)}
                             </Col>
                             <Col xs={4} style={Styles.facililitesCol}>
-                                pH: {(Math.random()+7.5).toFixed(3)}
+                               {(Math.random()+7.5).toFixed(3)}
                             </Col>
                         </Col>
                     </Row>
@@ -57,6 +63,26 @@ export default function Facility() {
     return (
         <Row className={'bg-white'}>
             <Col xs={12} xl={9} style={{height: '95vh'}}>
+                <Row className={'bg-light'}
+                     style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10, fontWeight:'bold'}}>
+                    <Col xs={4} sm={3} style={Styles.BootstrapCenter}>
+                        Name
+                    </Col>
+                    {!isMobile && <Col sm={3} style={Styles.BootstrapCenter}>
+                        Probe Name
+                    </Col>}
+                    <Col xs={8} sm={6} style={Styles.BootstrapCenter}>
+                        <Col xs={4} style={Styles.facililitesCol}>
+                            DO
+                        </Col>
+                        <Col xs={4} style={Styles.facililitesCol}>
+                            Temp
+                        </Col>
+                        <Col xs={4} style={Styles.facililitesCol}>
+                            pH
+                        </Col>
+                    </Col>
+                </Row>
                 {renderProbes()}
             </Col>
             <Col xs={12} xl={3} style={{...Styles.BootstrapCenter, height: '95vh', backgroundColor: 'rgb(30,44,75)'}}>

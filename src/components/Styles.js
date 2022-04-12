@@ -17,7 +17,6 @@ export default Styles = {
         alignItems: "center",
         justifyContent: "center",
         alignSelf: "center",
-        backgroundColor: '#5cb85c',
         marginLeft:5,
         marginRight:5,
         padding: 5,
