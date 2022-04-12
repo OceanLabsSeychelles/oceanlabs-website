@@ -31,11 +31,11 @@ export default function Facility() {
                          style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10}}>
                         <Col xs={4} sm={3} style={Styles.BootstrapCenter}>
                             <Link to={"/probe"}>
-                            <Button variant={'outline-primary'}>{probe}</Button>
+                            <Button variant={'primary'}>{probe}</Button>
                             </Link>
                         </Col>
                         {!isMobile && <Col sm={3} style={Styles.BootstrapCenter}>
-                            Tank Name
+                            Probe Name
                         </Col>}
                         <Col xs={8} sm={6} style={Styles.BootstrapCenter}>
                             <Col xs={4} style={Styles.facililitesCol}>
