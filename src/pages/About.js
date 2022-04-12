@@ -6,7 +6,7 @@ import logo from "../assets/logo.png"
 export default function About() {
     return (
         <Row style={Styles.BootstrapCenter}>
-            <Col xs={12} xl={3} style={{...Styles.BootstrapCenter, height: '95vh'}}>
+            <Col xs={12} xl={3} style={{...Styles.BootstrapCenter, height: '95vh', padding:"4em"}}>
                 <Card className={'bg-light'}>
                     <Card.Body>
                         <Card.Title style={Styles.text}><h3>About</h3>
