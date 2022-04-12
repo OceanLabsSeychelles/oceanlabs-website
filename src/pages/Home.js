@@ -8,12 +8,8 @@ import {BackendContext} from "../context/BackendProvider";
 export default function Home(){
     const {ProbeStatus, ProbeColor, ProbeVariant, ProbeDisabled} = useContext(ProbeContext)
     const {Probes} = useContext(BackendContext)
-    const [data, setData] = useState(generateZeros(24));
     const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-        setTimeout(()=>{setData(generateData(24))},3000)
-    }, [])
 
     function handleWindowSizeChange() {
         if (window.innerWidth < 762) {
@@ -30,20 +26,6 @@ export default function Home(){
             window.removeEventListener('resize', handleWindowSizeChange);
         }
     }, []);
-
-    function generateData(num) {
-        return [...new Array(num)].map((row, index) => ({
-            x: index,
-            y: Math.random() * 3 + 5
-        }));
-    }
-
-    function generateZeros(num) {
-        return [...new Array(num)].map((row, index) => ({
-            x: index,
-            y: 0.0
-        }));
-    }
 
     function renderPlotRow(props) {
         const color = ProbeColor.state;
@@ -128,8 +110,6 @@ export default function Home(){
                     </Col>
                 </Row>
             </Col>
-
-
         )
     }
 

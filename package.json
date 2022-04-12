@@ -12,6 +12,7 @@
     "react-bootstrap-slider": "^3.0.0",
     "react-dates": "^21.8.0",
     "react-dom": "18.0.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.0",
     "react-vis": "1.11.7",
     "xmlhttprequest": "^1.8.0"

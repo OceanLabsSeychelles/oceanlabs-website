@@ -3,7 +3,7 @@ import useAsyncState from "../hooks/useAsyncState";
 import {BackendContext} from "./BackendProvider";
 export const ProbeContext = createContext({});
 
-export const ProbeProvider = ({children}) => {
+export default function ProbeProvider({children}) {
     const {Probes} = useContext(BackendContext)
     const bootstrapColors = {
         "primary": "#0275d8",

@@ -1,5 +1,4 @@
 import React, {createContext, useEffect, useReducer, useState} from "react";
-import useAsyncState from "../hooks/useAsyncState";
 
 export const BackendContext = createContext({})
 
@@ -41,34 +40,25 @@ export default function BackendProvider({children}) {
 
     useEffect(() => {
         async function effect() {
-            phDispatch({type: probeTypes.DATA, value: generateData(24)})
+            phDispatch({type: probeTypes.DATA, value: generateData(24,8.1)})
             phDispatch({type: probeTypes.READY, value:true})
-            doDispatch({type: probeTypes.DATA, value: generateData(24)})
+            doDispatch({type: probeTypes.DATA, value: generateData(24, 7.5)})
             doDispatch({type: probeTypes.READY, value:true})
-            tpDispatch({type: probeTypes.DATA, value: generateData(24)})
+            tpDispatch({type: probeTypes.DATA, value: generateData(24, 26)})
             tpDispatch({type: probeTypes.READY, value:true})
-
         }
 
         setTimeout(() => {
             effect()
         }, 1000)
 
-        setTimeout(() => {
-            phDispatch({type: probeTypes.OUT_OF_RANGE, value: true})
-        }, 3000)
-
-        setTimeout(() => {
-            phDispatch({type: probeTypes.OUT_OF_RANGE, value: false})
-        }, 6000)
-
 
     }, [])
 
-    function generateData(num) {
+    function generateData(num, center) {
         return [...new Array(num)].map((row, index) => ({
             x: index,
-            y: Math.random() * 3 + 5
+            y: Math.random() + center
         }));
     }
 
