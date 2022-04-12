@@ -38,18 +38,18 @@ export default function BackendProvider({children}) {
     const [doState, doDispatch] = useReducer(reducer,initialProbe);
     const [tpState, tpDispatch] = useReducer(reducer,initialProbe);
 
-    useEffect(() => {
-        async function effect() {
-            phDispatch({type: probeTypes.DATA, value: generateData(24,8.1)})
-            phDispatch({type: probeTypes.READY, value:true})
-            doDispatch({type: probeTypes.DATA, value: generateData(24, 7.5)})
-            doDispatch({type: probeTypes.READY, value:true})
-            tpDispatch({type: probeTypes.DATA, value: generateData(24, 26)})
-            tpDispatch({type: probeTypes.READY, value:true})
-        }
+    function newProbeData(){
+        phDispatch({type: probeTypes.DATA, value: generateData(24,8.1)})
+        phDispatch({type: probeTypes.READY, value:true})
+        doDispatch({type: probeTypes.DATA, value: generateData(24, 7.5)})
+        doDispatch({type: probeTypes.READY, value:true})
+        tpDispatch({type: probeTypes.DATA, value: generateData(24, 26)})
+        tpDispatch({type: probeTypes.READY, value:true})
+    }
 
+    useEffect(() => {
         setTimeout(() => {
-            effect()
+            newProbeData()
         }, 1000)
 
 
@@ -76,6 +76,7 @@ export default function BackendProvider({children}) {
                     do: doState,
                     ph: phState,
                     temp: tpState,
+                    update:newProbeData,
                 }
             }}>
             {children}

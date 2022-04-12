@@ -70,7 +70,7 @@ export default function Home(){
                     <Button
                         variant={ProbeVariant.state}
                         onClick={() => {
-                            setData(generateData(24))
+                            Probes.update()
                         }}
                     >
                         {"<"}
@@ -79,7 +79,7 @@ export default function Home(){
                     <Button
                         variant={ProbeVariant.state}
                         onClick={() => {
-                            setData(generateData(24))
+                            Probes.update()
                         }}
                     >
                         {">"}
