@@ -6,17 +6,11 @@ export default function Header() {
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand href="/">
-                    <b>SURF</b>Pilot
+                    <b>SPGA</b>Demo
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Facility</Nav.Link>
-                        <NavDropdown title="Probes" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/probe">
-                                Probe Name
-                            </NavDropdown.Item>
-                        </NavDropdown>
                         <Nav.Link href="about">About</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
