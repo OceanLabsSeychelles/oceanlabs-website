@@ -14,16 +14,16 @@ export default function Buoy(props) {
           style={{ alignItems: "center", width: "50%", padding: "1em" }}
         >
           <Button
-            variant={"secondary"}
+            variant={"light"}
             onClick={() => {
               Probes.update();
             }}
           >
             {"<"}
           </Button>
-          <Button variant={"secondary"}>Date</Button>
+          <Button variant={"light"}>Date</Button>
           <Button
-            variant={"secondary"}
+            variant={"light"}
             onClick={() => {
               Probes.update();
             }}
@@ -117,17 +117,19 @@ export default function Buoy(props) {
             </Col>
           </Row>
           {renderDateButtons()}
-          <Row style={Styles.BootstrapCenter}>
-            <Button style={{ margin: "0.5em", width: "50%" }}>Export</Button>
-            <Button
-              style={{ margin: "0.5em", width: "50%" }}
-              variant={"secondary"}
-              onClick={() => {
-                Probes.setVisible(false);
-              }}
-            >
-              Return
-            </Button>
+          <Row >
+              <Col><Button style={{ margin: "0.5em", width: "50%" }}>Export</Button></Col>
+              <Col> <Button
+                  style={{ margin: "0.5em", width: "50%" }}
+                  variant={"secondary"}
+                  onClick={() => {
+                      Probes.setVisible(false);
+                  }}
+              >
+                  Return
+              </Button></Col>
+
+
           </Row>
         </Card.Text>
       </Card.Body>

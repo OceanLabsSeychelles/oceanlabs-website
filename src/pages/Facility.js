@@ -23,12 +23,14 @@ export default function Facility() {
     if (Probes.visible) {
       map.current.flyTo({
         center: [lng, lat],
-        zoom: 14
+        zoom: 16,
+        essential:true
       });
     } else {
       map.current.flyTo({
         center: [55.51, -4.52],
-        zoom: 10
+        zoom: 10,
+        essential:true
       });
     }
   }, [Probes.visible]);
@@ -42,7 +44,7 @@ export default function Facility() {
   }
 
   const markers = [
-    buildMarker("Baier Ternay", -4.6357323, 55.3729638),
+    buildMarker("Baie Ternay", -4.6357323, 55.3729638),
     buildMarker("Curieuse", -4.286085864745644, 55.734821213204626),
     buildMarker("Silhouette", -4.4752999135551255, 55.252023257325185),
     buildMarker("Ile Coco", -4.309699174357993, 55.86620032938555)
@@ -52,7 +54,7 @@ export default function Facility() {
     if (map.current) return; // initialize map only once
     map.current = new Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/dark-v10",
+      style: "mapbox://styles/mapbox/satellite-v9",
       center: [lng, lat],
       zoom: zoom,
       attributionControl: false
@@ -123,9 +125,6 @@ export default function Facility() {
     } else {
       return (
         <Buoy
-          callback={() => {
-            console.log("yay");
-          }}
         />
       );
     }
@@ -136,7 +135,7 @@ export default function Facility() {
       <Col
         xs={12}
         xl={8}
-        style={{ height: "95vh", backgroundColor: "rgb(30,44,75)" }}
+        style={{ height: "95vh", backgroundColor: "darkcyan" }}
       >
         <div ref={mapContainer} style={{ height: "100%", width: "100%" }} />
       </Col>
@@ -146,7 +145,7 @@ export default function Facility() {
         style={{
           ...Styles.BootstrapCenter,
           height: "95vh",
-          backgroundColor: "rgb(30,44,75)"
+          backgroundColor: "darkcyan"//"rgb(30,44,75)"
         }}
       >
         {renderRight()}
