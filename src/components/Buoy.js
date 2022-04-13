@@ -121,7 +121,7 @@ export default function Buoy(props) {
               <Col><Button style={{ margin: "0.5em", width: "50%" }}>Export</Button></Col>
               <Col> <Button
                   style={{ margin: "0.5em", width: "50%" }}
-                  variant={"secondary"}
+                  variant={"outline-dark"}
                   onClick={() => {
                       Probes.setVisible(false);
                   }}
