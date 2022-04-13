@@ -51,8 +51,6 @@ export default function BackendProvider({children}) {
         setTimeout(() => {
             newProbeData()
         }, 1000)
-
-
     }, [])
 
     function generateData(num, center) {
