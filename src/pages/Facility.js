@@ -1,89 +1,11 @@
-import {Button, Card, Col, Row, Badge} from "react-bootstrap";
+import {Badge, Button, Card, Col, Row} from "react-bootstrap";
 import Styles from "../components/Styles";
-import React, {useEffect, useState, useRef, useContext} from "react";
-import mapboxgl, {Map, Marker} from "!mapbox-gl";
-import Buoy from "../components/Buoy";
-import {BackendContext} from "../context/BackendProvider";
-
-mapboxgl.accessToken =
-    "pk.eyJ1IjoiYnJldHRtc21pdGgiLCJhIjoiY2t1NzFxNGt2MW9pNDJ2bzZqdmlibWJoZSJ9.lorLL3V1xySe1Gm75RvdNQ";
+import React, {useEffect, useState} from "react";
+import { Link } from "react-router-dom"
 
 export default function Facility() {
+    const probes = ['Tank 1','Tank 2', 'Tank 3', 'Tank 4','Tank 5', 'Tank 6']
     const [isMobile, setIsMobile] = useState(false);
-    const {Probes} = useContext(BackendContext);
-    const mapContainer = useRef(null);
-    const map = useRef(null);
-    const [lng, setLng] = useState(55.51);
-    const [lat, setLat] = useState(-4.52);
-    const [zoom, setZoom] = useState(10);
-    const [offcanvasVisible, setOffCanvasVisible] = useState(false);
-
-    useEffect(() => {
-        if (!map.current) return;
-        if (Probes.visible) {
-            map.current.flyTo({
-                center: [lng, lat],
-                zoom: 15,
-                essential: true
-            });
-        } else {
-            map.current.flyTo({
-                center: [55.51, -4.52],
-                zoom: 10,
-                essential: true
-            });
-        }
-    }, [Probes.visible]);
-
-    function buildMarker(name, lat, lng) {
-        return {
-            name: name,
-            lat: lat,
-            lng: lng
-        };
-    }
-
-    const markers = [
-        buildMarker("Baie Ternay", -4.6357323, 55.3729638),
-        buildMarker("Curieuse", -4.286085864745644, 55.734821213204626),
-        buildMarker("Silhouette", -4.4752999135551255, 55.252023257325185),
-        buildMarker("Ile Coco", -4.309699174357993, 55.86620032938555)
-    ];
-
-    useEffect(() => {
-        if (map.current) return; // initialize map only once
-        map.current = new Map({
-            container: mapContainer.current,
-            style: "mapbox://styles/mapbox/dark-v10",
-            center: [lng, lat],
-            zoom: zoom,
-            attributionControl: false
-        });
-    });
-
-    useEffect(() => {
-        if (!map.current) return; // wait for map to initialize
-        map.current.on("move", () => {
-            //setLng(map.current.getCenter().lng.toFixed(4));
-            //setLat(map.current.getCenter().lat.toFixed(4));
-            setZoom(map.current.getZoom().toFixed(2));
-        });
-        map.current.on("load", function () {
-            markers.forEach((marker) => {
-                const m = new Marker()
-                    .setLngLat([marker.lng, marker.lat])
-                    .addTo(map.current);
-            });
-        });
-    });
-
-    useEffect(() => {
-        handleWindowSizeChange();
-        window.addEventListener("resize", handleWindowSizeChange);
-        return () => {
-            window.removeEventListener("resize", handleWindowSizeChange);
-        };
-    }, []);
 
     function handleWindowSizeChange() {
         if (window.innerWidth < 762) {
@@ -93,69 +15,92 @@ export default function Facility() {
         }
     }
 
-    function renderRight() {
-        if (!Probes.visible) {
-            return (
-                <Card style={{textAlign: "center", width: '60%'}}>
-                    <Card.Body>
-                        <Card.Title style={{padding: "1em"}}>
-                            <h3>View Deployment</h3>
-                        </Card.Title>
-                        <Card.Text>
-                            {markers.map((marker) => (
-                                <Row style={{padding: 10, }}>
-                                    <Col xs={9} style={Styles.BootstrapCenter}>
-                                        <Button
-                                            style={{width: '90%'}}
-                                            variant={"outline-dark"}
-                                            key={marker.name}
-                                            onClick={() => {
-                                                setLng(marker.lng);
-                                                setLat(marker.lat);
-                                                Probes.setBuoy(marker.name);
-                                                Probes.setVisible(true);
-                                            }}
-                                        >
-                                            {marker.name}
-                                        </Button>
-                                    </Col>
-                                    <Col xs={3} style={Styles.BootstrapCenter}>
-                                        <Badge bg={'success'}>Online</Badge>
-                                    </Col>
-                                </Row>
-                            ))}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            );
-        } else {
-            return (
-                <Buoy
-                />
-            );
+    useEffect(() => {
+        handleWindowSizeChange();
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
         }
+    }, []);
+
+    function renderProbes() {
+        return (
+            probes.map((probe, index) => {
+                const _do = (index === 3)?6.5:(Math.random()+8.1).toFixed(3)
+                let color = {}
+                if (index===3){
+                    color={backgroundColor:'#d9534f'}
+                }
+
+                return (
+                    <Row className={'bg-light'}
+                         style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10}}>
+                        <Col xs={4} sm={3} style={Styles.BootstrapCenter}>
+                            <Link to={"/probe"}>
+                                <Button variant={'primary'}>{probe}</Button>
+                            </Link>
+                        </Col>
+                        {!isMobile && <Col sm={3} style={Styles.BootstrapCenter}>
+                            Probe Name
+                        </Col>}
+                        <Col xs={8} sm={6} style={Styles.BootstrapCenter}>
+                            <Col xs={4} style={{...Styles.facililitesCol,...color}}>
+                                {_do}
+                            </Col>
+                            <Col xs={4} style={Styles.facililitesCol}>
+                                {(Math.random()+26).toFixed(3)}
+                            </Col>
+                            <Col xs={4} style={Styles.facililitesCol}>
+                                {(Math.random()+7.5).toFixed(3)}
+                            </Col>
+                        </Col>
+                    </Row>
+                )
+            })
+        )
     }
 
     return (
-        <Row className={"bg-white"}>
-            <Col
-                xs={12}
-                xl={8}
-                style={{height: "95vh", backgroundColor: "rgb(30,44,75)"}}
-            >
-                <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
+        <Row className={'bg-white'}>
+            <Col xs={12} xl={9} style={{height: '95vh'}}>
+                <Row className={'bg-light'}
+                     style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10, fontWeight:'bold'}}>
+                    <Col xs={4} sm={3} style={Styles.BootstrapCenter}>
+                        Name
+                    </Col>
+                    {!isMobile && <Col sm={3} style={Styles.BootstrapCenter}>
+                        Probe Name
+                    </Col>}
+                    <Col xs={8} sm={6} style={Styles.BootstrapCenter}>
+                        <Col xs={4} style={Styles.facililitesCol}>
+                            DO
+                        </Col>
+                        <Col xs={4} style={Styles.facililitesCol}>
+                            Temp
+                        </Col>
+                        <Col xs={4} style={Styles.facililitesCol}>
+                            pH
+                        </Col>
+                    </Col>
+                </Row>
+                {renderProbes()}
             </Col>
-            <Col
-                xs={12}
-                xl={4}
-                style={{
-                    ...Styles.BootstrapCenter,
-                    height: "95vh",
-                    backgroundColor: "rgb(30,44,75)"//"rgb(30,44,75)"
-                }}
-            >
-                {renderRight()}
+            <Col xs={12} xl={3} style={{...Styles.BootstrapCenter, height: '95vh', backgroundColor: 'rgb(30,44,75)'}}>
+                <Card style={{textAlign: 'center'}}>
+                    <Card.Body>
+                        <Card.Title style={{padding: '1em'}}>
+                            <h3>SURF</h3>
+                        </Card.Title>
+                        <Card.Text>
+                            Facility Status: <Badge bg={'success'}>Within Specifications</Badge>
+                        </Card.Text>
+                        <Row style={{padding: "0.5em"}}><Button variant={'secondary'}>Set Notification Contacts</Button></Row>
+                        <Row style={{padding: "0.5em"}}><Button variant={'secondary'}>Send Test
+                            Notification</Button></Row>
+                        <Row style={{padding: "0.5em"}}><Button variant={'primary'}>Export Data</Button></Row>
+                    </Card.Body>
+                </Card>
             </Col>
         </Row>
-    );
+    )
 }
