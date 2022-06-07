@@ -95,7 +95,7 @@ export default function BuoyStatic() {
     function renderRight() {
         if (!Probes.visible) {
             return (
-                <Card style={{textAlign: "center", width: '60%'}}>
+                <Card style={{textAlign: "center", width: '80%'}}>
                     <Card.Body>
                         <Card.Title style={{padding: "1em"}}>
                             <h3>View Deployment</h3>

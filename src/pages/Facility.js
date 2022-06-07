@@ -27,13 +27,13 @@ export default function Facility() {
         return (
             probes.map((probe, index) => {
                 const _do = (index === 3)?6.5:(Math.random()+8.1).toFixed(3)
-                let color = {}
+                let color = {backgroundColor:'#e2fcdc'}
                 if (index===3){
-                    color={backgroundColor:'#d9534f'}
+                    color={backgroundColor:'#fab4b2'}
                 }
 
                 return (
-                    <Row className={'bg-light'}
+                    <Row className={'bg-white'}
                          style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10}}>
                         <Col xs={4} sm={3} style={Styles.BootstrapCenter}>
                             <Link to={"/probe"}>
@@ -47,10 +47,10 @@ export default function Facility() {
                             <Col xs={4} style={{...Styles.facililitesCol,...color}}>
                                 {_do}
                             </Col>
-                            <Col xs={4} style={Styles.facililitesCol}>
+                            <Col xs={4} style={{...Styles.facililitesCol, backgroundColor:'#e2fcdc'}}>
                                 {(Math.random()+26).toFixed(3)}
                             </Col>
-                            <Col xs={4} style={Styles.facililitesCol}>
+                            <Col xs={4} style={{...Styles.facililitesCol, backgroundColor:'#e2fcdc'}}>
                                 {(Math.random()+7.5).toFixed(3)}
                             </Col>
                         </Col>
@@ -61,9 +61,9 @@ export default function Facility() {
     }
 
     return (
-        <Row className={'bg-white'}>
+        <Row className={'bg-light'}>
             <Col xs={12} xl={9} style={{height: '95vh'}}>
-                <Row className={'bg-light'}
+                <Row className={'bg-white'}
                      style={{...Styles.BootstrapCenter, margin: 20, padding: 10, borderRadius: 10, fontWeight:'bold'}}>
                     <Col xs={4} sm={3} style={Styles.BootstrapCenter}>
                         Name
