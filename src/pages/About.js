@@ -27,15 +27,16 @@ export default function About() {
                             <Image fluid src={logo}/>
                         </Card.Title>
                         <Card.Text>
-
-                            <p style={Styles.text}> (C)opyright 2022<br/>
+                            <p style={Styles.text}>
+                                (C)opyright 2022<br/>
                                 OceanLabs Seychelles LLC<br/>
-                                Version 1.0.0<br/>
-                                Licensed to: Nature Seychelles</p>
+                                Version 1.0.3<br/>
+                                Licensed to: Nature Seychelles
+                            </p>
                         </Card.Text>
 
-                        <button style={{width:'100%'}} className="btn btn-dark">Live Buoy Demonstration</button><br/><br/>
-                        <button style={{width:'100%'}} className="btn btn-dark">Live Aquaculture Demonstration</button>
+                        <button style={{width:'100%'}} className="btn btn-light">Live Buoy Demonstration</button><br/><br/>
+                        <button style={{width:'100%'}} className="btn btn-light">Live Aquaculture Demonstration</button>
                     </Card.Body>
                 </Card>
             </Col>

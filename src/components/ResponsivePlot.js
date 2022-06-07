@@ -97,7 +97,7 @@ export default function ResponsivePlot(props) {
             <Col xs={10}>
                 <XYPlot
                     height={windowSize.height * props.height}
-                    width={windowSize.width * props.width}
+                    width={windowSize.width * 0.7}
                     animation={modes[0]}
                 >
                     <VerticalGridLines/>
@@ -112,21 +112,6 @@ export default function ResponsivePlot(props) {
                             console.log(value);
                         }}
                     />
-                    <Crosshair values={crosshairData}>
-                        <div
-                            style={{
-                                backgroundColor: "rgba(0,0,25,0.75)",
-                                padding: "5px",
-                                borderRadius: "3px",
-                                alignItems: "center",
-                                justifyContent: "center"
-                            }}
-                        >
-                            <div>
-                                {props.title}:{crosshairData.y} Time:{crosshairData.x}
-                            </div>
-                        </div>
-                    </Crosshair>
                 </XYPlot>
             </Col>
         </div>)

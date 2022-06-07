@@ -2,7 +2,7 @@ import {Button, Card, Col, Row, Badge} from "react-bootstrap";
 import Styles from "../components/Styles";
 import React, {useEffect, useState, useRef, useContext} from "react";
 import mapboxgl, {Map, Marker} from "!mapbox-gl";
-import Buoy from "../components/Buoy";
+import BuoyPlots from "../components/BuoyPlots";
 import {BackendContext} from "../context/BackendProvider";
 
 mapboxgl.accessToken =
@@ -16,7 +16,6 @@ export default function BuoyStatic() {
     const [lng, setLng] = useState(55.51);
     const [lat, setLat] = useState(-4.52);
     const [zoom, setZoom] = useState(10);
-    const [offcanvasVisible, setOffCanvasVisible] = useState(false);
 
     useEffect(() => {
         if (!map.current) return;
@@ -130,21 +129,38 @@ export default function BuoyStatic() {
             );
         } else {
             return (
-                <Buoy
+                <BuoyPlots
+                    isMobile={isMobile}
                 />
             );
         }
     }
 
-    return (
-        <Row className={"bg-white"}>
-            <Col
-                xs={12}
-                xl={8}
-                style={{height: "95vh", backgroundColor: "rgb(30,44,75)"}}
-            >
-                <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
-            </Col>
+    if(!isMobile) {
+        return (
+            <Row className={"bg-white"}>
+                <Col
+                    xs={12}
+                    xl={8}
+                    style={{height: "95vh", backgroundColor: "rgb(30,44,75)"}}
+                >
+                    <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
+                </Col>
+                <Col
+                    xs={12}
+                    xl={4}
+                    style={{
+                        ...Styles.BootstrapCenter,
+                        height: "95vh",
+                        backgroundColor: "rgb(30,44,75)"//"rgb(30,44,75)"
+                    }}
+                >
+                    {renderRight()}
+                </Col>
+            </Row>
+        );
+    }else{
+        return (
             <Col
                 xs={12}
                 xl={4}
@@ -156,6 +172,7 @@ export default function BuoyStatic() {
             >
                 {renderRight()}
             </Col>
-        </Row>
-    );
+        );
+    }
+
 }

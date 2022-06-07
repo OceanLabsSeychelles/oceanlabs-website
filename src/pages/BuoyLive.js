@@ -7,7 +7,7 @@ import {BackendContext} from "../context/BackendProvider";
 mapboxgl.accessToken =
     "pk.eyJ1IjoiYnJldHRtc21pdGgiLCJhIjoiY2t1NzFxNGt2MW9pNDJ2bzZqdmlibWJoZSJ9.lorLL3V1xySe1Gm75RvdNQ";
 
-export default function BouyLive() {
+export default function BuoyLive() {
     const [isMobile, setIsMobile] = useState(false);
     const {Probes} = useContext(BackendContext);
     const mapContainer = useRef(null);
