@@ -11,13 +11,12 @@ mapboxgl.accessToken =
 export default function BuoyLive() {
     const [isMobile, setIsMobile] = useState(false);
     const {Probes} = useContext(BackendContext);
-    const {dbData} = useContext(RestDbContext)
+    const {restDb} = useContext(RestDbContext)
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng, setLng] = useState(55.72);
     const [lat, setLat] = useState(-4.31633);
-    const [zoom, setZoom] = useState(12);
-    const buoyMarker = new mapboxgl.Marker();
+    const [zoom, setZoom] = useState(9);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -57,17 +56,25 @@ export default function BuoyLive() {
     }
 
     async function fetchLastBuoyPost() {
-        buoyMarker.setLngLat([lng, lat]);
-        buoyMarker.addTo(map.current);
-        const popup = new mapboxgl.Popup({offset: 25}).setText(
-            JSON.stringify(dbData)
-        );
-        buoyMarker.setPopup(popup);
+        if (restDb.state !== 'fetching' && restDb.state !== 'idle') {
+            const buoyMarker = new mapboxgl.Marker();
+            let popup = new mapboxgl.Popup();
+            popup.setHTML(`<p><b>Capture Time (UTC):</b> ${restDb.lastBuoy.captureTime}<br/><b>Signal Strength (dB):</b> ${restDb.lastBuoy.rssi}<br/><b>Battery (V):</b> ${Number(restDb.lastBuoy.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
+
+            buoyMarker.setLngLat([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
+            buoyMarker.setPopup(popup);
+            buoyMarker.addTo(map.current);
+            map.current.setCenter([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
+            map.current.setZoom(16);
+
+
+        }
     }
 
     useEffect(() => {
         fetchLastBuoyPost()
-    }, [])
+    }, [restDb])
+    /*
     if (!isMobile) {
         return (
             <Row className={"bg-white"}>
@@ -91,6 +98,8 @@ export default function BuoyLive() {
             </Row>
         );
     } else {
+
+     */
         return (
             <Row style={{height: '95vh'}} className={"bg-white"}>
                 <Col
@@ -100,5 +109,5 @@ export default function BuoyLive() {
                 </Col>
             </Row>
         )
-    }
+    //}
 }

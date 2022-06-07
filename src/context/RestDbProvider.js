@@ -32,7 +32,6 @@ export default function RestDbProvider({children}) {
         }
         console.log(lastBuoy);
 
-
         let lastTank = false;
         index = 1;
         while (!lastTank) {
@@ -60,7 +59,7 @@ export default function RestDbProvider({children}) {
     }, []);
 
     return (
-        <RestDbContext.Provider value={{data:dbData,update:fetchData}}>
+        <RestDbContext.Provider value={{restDb:dbData,update:fetchData}}>
             {children}
         </RestDbContext.Provider>
     )

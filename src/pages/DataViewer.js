@@ -5,13 +5,13 @@ import {RestDbContext} from "../context/RestDbProvider";
 import Styles from "../components/Styles"
 
 export default function DataViewer() {
-    const dbData = useContext(RestDbContext);
+    const {restDb, update} = useContext(RestDbContext);
     return (
         <Col>
             <Col style={{height: '80vh', overflowY: 'scroll'}}>
                 <ReactJson
                     style={{margin: '1rem'}}
-                    src={dbData.data}
+                    src={restDb}
                     displayDataTypes={false}
                 />
             </Col>
@@ -19,7 +19,7 @@ export default function DataViewer() {
                 <Col style={{...Styles.BootstrapCenter, margin: "1rem"}}>
                     <Button
                         style={{margin: "0.5em", width: "75%"}}
-                        onClick={dbData.update}
+                        onClick={update}
                     >
                         Reload
                     </Button></Col>

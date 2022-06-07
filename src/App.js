@@ -13,8 +13,8 @@ import {RestDbContext} from "./context/RestDbProvider";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 export default function App() {
-    const dbData = useContext(RestDbContext);
-    if(dbData.data.state !== 'idle' && dbData.data.state !== 'fetching') {
+    const {restDb} = useContext(RestDbContext);
+    if(restDb.state !== 'idle') {
         return (
             <BrowserRouter>
                 <Header/>
