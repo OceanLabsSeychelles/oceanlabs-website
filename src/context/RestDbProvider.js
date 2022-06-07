@@ -3,10 +3,10 @@ import React, {createContext, useEffect, useState} from "react";
 export const RestDbContext = createContext({});
 
 export default function RestDbProvider({children}){
-    const [dbData, setDbData] = useState({status:"idle",allData:{},lastBuoy:{}, lastTank:{}});
+    const [dbData, setDbData] = useState({status:"idle",lastBuoy:{}, lastTank:{},last10:{}});
 
     async function fetchLastBuoyPost() {
-        setDbData({status:"fetching",allData:{},lastBuoy:{}, lastTank:{}})
+        setDbData({status:"fetching",lastBuoy:{}, lastTank:{},last10:{}})
         let response = await fetch("https://sfasurf-8806.restdb.io/rest/pilot?x-apikey=629678a3c4d5c3756d35a40e",
             {
                 headers: {
@@ -50,9 +50,10 @@ export default function RestDbProvider({children}){
         //const last = data[data.length - 1];
         const allData = {
             status:'complete',
-            allData: data,
             lastBuoy:lastBuoy,
-            lastTank:lastTank
+            lastTank:lastTank,
+            last10: data.slice(data.length-10,data.length).reverse(),
+
         }
         setDbData(allData);
     }
@@ -61,7 +62,6 @@ export default function RestDbProvider({children}){
         fetchLastBuoyPost();
     }, []);
 
-    setInterval(fetchLastBuoyPost, 30000)
     return(
         <RestDbContext.Provider value={dbData}>
             {children}
