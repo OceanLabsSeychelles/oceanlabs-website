@@ -8,8 +8,12 @@ export default function DataViewer() {
     const dbData = useContext(RestDbContext);
     return (
         <Col>
-            <Col style={{height: '80vh', overflowY: 'scroll'}}>
-                <ReactJson style={{margin: '1rem'}} src={dbData.data}/>
+            <Col style={{height: '75vh', overflowY: 'scroll'}}>
+                <ReactJson
+                    style={{margin: '1rem'}}
+                    src={dbData.data}
+                    displayDataTypes={false}
+                />
             </Col>
             <Row style={Styles.BootstrapCenter}>
                 <Col style={{...Styles.BootstrapCenter, margin: "1rem"}}>
