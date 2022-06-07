@@ -35,8 +35,8 @@ export default function About() {
                             </p>
                         </Card.Text>
 
-                        <button style={{width:'100%'}} className="btn btn-light">Live Buoy Demonstration</button><br/><br/>
-                        <button style={{width:'100%'}} className="btn btn-light">Live Aquaculture Demonstration</button>
+                        <button style={{width:'100%'}} className="btn btn-primary">Live Buoy Demonstration</button><br/><br/>
+                        <button style={{width:'100%'}} className="btn btn-primary">Live Aquaculture Demonstration</button>
                     </Card.Body>
                 </Card>
             </Col>

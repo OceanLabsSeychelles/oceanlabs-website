@@ -13,6 +13,7 @@
     "react-bootstrap-slider": "^3.0.0",
     "react-dates": "^21.8.0",
     "react-dom": "18.0.0",
+    "react-json-view": "^1.21.3",
     "react-mapbox-gl": "^5.1.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.0",

@@ -2,7 +2,7 @@ import {Button, Card, Col, Row, Badge} from "react-bootstrap";
 import Styles from "../components/Styles";
 import React, {useEffect, useState, useRef, useContext} from "react";
 import mapboxgl, {Map, Marker} from "!mapbox-gl";
-import {BackendContext} from "../context/BackendProvider";
+import {BackendContext} from "../context/SampleDataProvider";
 
 mapboxgl.accessToken =
     "pk.eyJ1IjoiYnJldHRtc21pdGgiLCJhIjoiY2t1NzFxNGt2MW9pNDJ2bzZqdmlibWJoZSJ9.lorLL3V1xySe1Gm75RvdNQ";

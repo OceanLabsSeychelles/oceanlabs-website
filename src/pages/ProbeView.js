@@ -3,7 +3,7 @@ import {Badge, Button, ButtonGroup, Card, Col, Row} from "react-bootstrap";
 import Styles from "../components/Styles";
 import ResponsivePlot from "../components/ResponsivePlot";
 import {ProbeContext} from "../context/ProbeProvider";
-import {BackendContext} from "../context/BackendProvider";
+import {BackendContext} from "../context/SampleDataProvider";
 
 export default function ProbeView(){
     const {ProbeStatus, ProbeColor, ProbeVariant, ProbeDisabled} = useContext(ProbeContext)

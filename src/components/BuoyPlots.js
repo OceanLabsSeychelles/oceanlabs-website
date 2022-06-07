@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import ResponsivePlot from "../components/ResponsivePlot";
-import {BackendContext} from "../context/BackendProvider";
+import {BackendContext} from "../context/SampleDataProvider";
 import Styles from "./Styles";
 import {Col, Row, Card, Button, ButtonGroup} from "react-bootstrap";
 

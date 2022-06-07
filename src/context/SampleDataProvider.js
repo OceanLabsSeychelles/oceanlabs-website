@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useReducer, useState } from "react";
 
 export const BackendContext = createContext({});
 
-export default function BackendProvider({ children }) {
+export default function SampleDataProvider({ children }) {
   const [isVisible, setIsVisible] = useState(false);
   const [buoy, setBuoy] = useState("");
   const probeTypes = {

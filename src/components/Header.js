@@ -18,10 +18,15 @@ export default function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavDropdown title="Static" id="basic-nav-dropdown">
+                        <NavDropdown title="Static" id="basic-nav-dropdown" style={{textAlign:'center'}}>
                             <NavDropdown.Item href="/facility">Aquaculture Facility</NavDropdown.Item>
                             <NavDropdown.Item href="/probe">Aquaculture Tank</NavDropdown.Item>
                             <NavDropdown.Item href="/buoystatic">Buoy Deployment</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Live" id="basic-nav-dropdown" style={{textAlign:'center'}}>
+                            <NavDropdown.Item href="">Aquaculture</NavDropdown.Item>
+                            <NavDropdown.Item href="/buoylive">Buoy</NavDropdown.Item>
+                            <NavDropdown.Item href="">Raw Data</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 

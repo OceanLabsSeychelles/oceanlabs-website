@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect} from 'react'
 import useAsyncState from "../hooks/useAsyncState";
-import {BackendContext} from "./BackendProvider";
+import {BackendContext} from "./SampleDataProvider";
 export const ProbeContext = createContext({});
 
 export default function ProbeProvider({children}) {
