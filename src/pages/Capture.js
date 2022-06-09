@@ -18,6 +18,12 @@ export default function Capture() {
 
     const marker = new mapboxgl.Marker();
 
+    var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+    };
+
     function success(pos) {
         var crd = pos.coords;
 
