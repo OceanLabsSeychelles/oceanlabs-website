@@ -33,6 +33,8 @@ export default function Capture() {
         console.log(`Latitude : ${crd.latitude}`);
         console.log(`Longitude: ${crd.longitude}`);
         console.log(`More or less ${crd.accuracy} meters.`);
+        setLat(crd.latitude);
+        setLng(crd.longitude);
         marker.setLngLat([crd.longitude, crd.latitude]);
     }
 
@@ -96,11 +98,26 @@ export default function Capture() {
                 }}>
                     <label>
                         RSSI:
-                        <input type="text" value={rssi} onChange={(event)=>{
+                        <input type="text" value={rssi} onChange={(event) => {
                             console.log(event.target);
-                        setRssi(event.target.value)}}/>
+                            setRssi(event.target.value)
+                        }}/>
                     </label>
-                    <input type="submit" value="Submit"/>
+                    <Button onClick={() => {
+                        console.log('clicked')
+                        let xhr = new XMLHttpRequest();
+                        xhr.open("POST", "https://sfasurf-8806.restdb.io/rest/pilot?x-apikey=629678a3c4d5c3756d35a40e");
+
+                        xhr.setRequestHeader("X-API-KEY", "629678a3c4d5c3756d35a40e");
+                        xhr.setRequestHeader("Accept", "application/json");
+                        xhr.setRequestHeader("Content-Type", "application/json");
+
+                        xhr.onload = () => console.log(xhr.responseText);
+
+                        let data = {tank:'RemoteCapture',rssi:Number(rssi), lat:lat, lng:lng}
+
+                        xhr.send(JSON.stringify(data));
+                    }}>Submit</Button>
                 </form>
             </Row>
         </Col>
