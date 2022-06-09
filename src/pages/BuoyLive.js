@@ -9,8 +9,6 @@ mapboxgl.accessToken =
     "pk.eyJ1IjoiYnJldHRtc21pdGgiLCJhIjoiY2t1NzFxNGt2MW9pNDJ2bzZqdmlibWJoZSJ9.lorLL3V1xySe1Gm75RvdNQ";
 
 export default function BuoyLive() {
-    const [isMobile, setIsMobile] = useState(false);
-    const {Probes} = useContext(BackendContext);
     const {restDb} = useContext(RestDbContext)
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -39,26 +37,23 @@ export default function BuoyLive() {
 
     });
 
-    useEffect(() => {
-        handleWindowSizeChange();
-        window.addEventListener("resize", handleWindowSizeChange);
-        return () => {
-            window.removeEventListener("resize", handleWindowSizeChange);
-        };
-    }, []);
-
-    function handleWindowSizeChange() {
-        if (window.innerWidth < 762) {
-            setIsMobile(true);
-        } else {
-            setIsMobile(false);
-        }
-    }
 
     async function fetchLastBuoyPost() {
         if (restDb.state !== 'fetching' && restDb.state !== 'idle') {
             const buoyMarker = new mapboxgl.Marker();
             let popup = new mapboxgl.Popup();
+
+            restDb?.allBuoy?.forEach(buoy=>{
+                let p = new mapboxgl.Popup();
+                p.setHTML(`<p><b>Capture Time (UTC):</b> ${buoy?.captureTime}<br/><b>Signal Strength (dB):</b> ${buoy?.rssi}<br/><b>Battery (V):</b> ${Number(buoy?.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
+
+
+                const marker = new mapboxgl.Marker({ "color": "#5e02b4" });
+                marker.setLngLat([buoy.lng, buoy.lat]);
+                marker.setPopup(p);
+                marker.addTo(map.current);
+            })
+
             popup.setHTML(`<p><b>Capture Time (UTC):</b> ${restDb.lastBuoy.captureTime}<br/><b>Signal Strength (dB):</b> ${restDb.lastBuoy.rssi}<br/><b>Battery (V):</b> ${Number(restDb.lastBuoy.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
 
             buoyMarker.setLngLat([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
@@ -100,14 +95,14 @@ export default function BuoyLive() {
     } else {
 
      */
-        return (
-            <Row style={{height: '95vh'}} className={"bg-white"}>
-                <Col
-                    style={{height: "100%", backgroundColor: "rgb(30,44,75)"}}
-                >
-                    <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
-                </Col>
-            </Row>
-        )
+    return (
+        <Row style={{height: '95vh'}} className={"bg-white"}>
+            <Col
+                style={{height: "100%", backgroundColor: "rgb(30,44,75)"}}
+            >
+                <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
+            </Col>
+        </Row>
+    )
     //}
 }
