@@ -40,8 +40,6 @@ export default function BuoyLive() {
 
     async function fetchLastBuoyPost() {
         if (restDb.state !== 'fetching' && restDb.state !== 'idle') {
-            const buoyMarker = new mapboxgl.Marker();
-            let popup = new mapboxgl.Popup();
 
             restDb?.allBuoy?.forEach(buoy=>{
                 let p = new mapboxgl.Popup();
@@ -54,13 +52,15 @@ export default function BuoyLive() {
                 marker.addTo(map.current);
             })
 
-            popup.setHTML(`<p><b>Capture Time (UTC):</b> ${restDb.lastBuoy.captureTime}<br/><b>Signal Strength (dB):</b> ${restDb.lastBuoy.rssi}<br/><b>Battery (V):</b> ${Number(restDb.lastBuoy.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
+            const latestMarker = new mapboxgl.Marker();
+            let latestPopup = new mapboxgl.Popup({"open":'true'});
+            latestPopup.setHTML(`<p><b>Capture Time (UTC):</b> ${restDb.lastBuoy.captureTime}<br/><b>Signal Strength (dB):</b> ${restDb.lastBuoy.rssi}<br/><b>Battery (V):</b> ${Number(restDb.lastBuoy.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
 
-            buoyMarker.setLngLat([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
-            buoyMarker.setPopup(popup);
-            buoyMarker.addTo(map.current);
+            latestMarker.setLngLat([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
+            latestMarker.setPopup(latestPopup);
+            latestMarker.addTo(map.current);
             map.current.setCenter([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
-            map.current.setZoom(16);
+            map.current.setZoom(20);
 
 
         }
