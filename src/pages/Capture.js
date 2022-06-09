@@ -25,11 +25,9 @@ export default function Capture() {
         console.log(`Latitude : ${crd.latitude}`);
         console.log(`Longitude: ${crd.longitude}`);
         console.log(`More or less ${crd.accuracy} meters.`);
+        marker.setLngLat([crd.longitude, crd.latitude]);
     }
 
-    function errors(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-    }
 
     function errors(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
