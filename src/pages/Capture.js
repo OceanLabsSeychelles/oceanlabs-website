@@ -24,6 +24,7 @@ export default function Capture() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 let coordinates = [position.coords.latitude, position.coords.longitude];
+                console.log(coordinates);
                 setLocation(coordinates);
                 marker.setLngLat([position.coords.latitude, position.coords.lat]);
                 map.current.setCenter([position.coords.latitude, position.coords.lat]);
@@ -31,7 +32,6 @@ export default function Capture() {
         }
     }
 
-    setInterval(locate, 5000);
     useEffect(() => {
         locate();
     }, [])
