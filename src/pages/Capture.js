@@ -114,7 +114,15 @@ export default function Capture() {
                         xhr.setRequestHeader("Accept", "application/json");
                         xhr.setRequestHeader("Content-Type", "application/json");
 
-                        xhr.onload = () => console.log(xhr.responseText);
+                        xhr.onload = () => {
+                            console.log(xhr.status);
+                            if(xhr.status!==201){
+                                setRssi("Error");
+                            }else{
+                                setRssi("Ok");
+                            }
+                            setTimeout(()=>{setRssi("")},2000)
+                        };
 
                         let data = {tank:'RemoteCapture',rssi:Number(rssi), lat:lat, lng:lng}
 
