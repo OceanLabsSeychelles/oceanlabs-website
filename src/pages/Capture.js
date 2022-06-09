@@ -35,6 +35,8 @@ export default function Capture() {
         console.log(`More or less ${crd.accuracy} meters.`);
         setLat(crd.latitude);
         setLng(crd.longitude);
+        map.current.setCenter([crd.longitude,crd.longitude]);
+        map.current.setZoom(20);
         marker.setLngLat([crd.longitude, crd.latitude]);
     }
 
@@ -52,9 +54,11 @@ export default function Capture() {
                     if (result.state === "granted") {
                         console.log(result);
                         navigator.geolocation.getCurrentPosition(success);
+                        setInterval(navigator.geolocation.getCurrentPosition(success),2000);
                         //If granted then you can directly call your function here
                     } else if (result.state === "prompt") {
                         navigator.geolocation.getCurrentPosition(success, errors, options);
+                        setInterval(navigator.geolocation.getCurrentPosition(success, errors, options),2000);
                     } else if (result.state === "denied") {
                         //If denied then you have to show instructions to enable location
                     }
