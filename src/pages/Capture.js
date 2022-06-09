@@ -25,11 +25,8 @@ export default function Capture() {
             navigator.geolocation.getCurrentPosition(function (position) {
                 let coordinates = [position.coords.latitude, position.coords.longitude];
                 setLocation(coordinates);
-                map.current.flyTo({
-                    center:{coordinates},
-                    zoom:22,
-                    essential: true
-                });
+                marker.setLngLat([position.coords.latitude, position.coords.lat]);
+                map.current.setCenter([position.coords.latitude, position.coords.lat]);
             });
         }
     }
