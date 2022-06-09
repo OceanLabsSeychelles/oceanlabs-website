@@ -9,12 +9,14 @@ mapboxgl.accessToken =
     "pk.eyJ1IjoiYnJldHRtc21pdGgiLCJhIjoiY2t1NzFxNGt2MW9pNDJ2bzZqdmlibWJoZSJ9.lorLL3V1xySe1Gm75RvdNQ";
 
 export default function Capture() {
-    const [location, setLocation] = useState([]);
+    const [location, setLocation] = useState([0,0]);
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng, setLng] = useState(55.72);
     const [lat, setLat] = useState(-4.31633);
     const [zoom, setZoom] = useState(9);
+
+    const marker = new mapboxgl.Marker();
 
 
     function locate(){
@@ -24,6 +26,7 @@ export default function Capture() {
                 setLocation(coordinates);
                 map.current.flyTo({
                     center:{coordinates},
+                    zoom:22,
                     essential: true
                 });
             });
@@ -41,6 +44,8 @@ export default function Capture() {
             zoom: zoom,
             attributionControl: false
         });
+        marker.setLngLat(location);
+        marker.addTo(map.current);
     });
 
     return (
