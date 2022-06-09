@@ -1,4 +1,4 @@
-import {Col, Row} from "react-bootstrap";
+import {Button, Col, Row} from "react-bootstrap";
 import Styles from "../components/Styles";
 import React, {useEffect, useState, useRef, useContext} from "react";
 import mapboxgl, {Map} from "!mapbox-gl";
@@ -42,13 +42,24 @@ export default function Capture() {
     });
 
     return (
-        <Row style={{height: '95vh'}} className={"bg-white"}>
+        <Col style={{height:'100vh'}}>
+        <Row style={{height: '85%'}} className={"bg-white"}>
             <Col
                 style={{height: "100%", backgroundColor: "rgb(30,44,75)"}}
             >
                 <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
             </Col>
         </Row>
+            <Row style={{...Styles.BootstrapCenter, backgroundColor:'lightgray', height:'15%'}}>
+                <Col style={{...Styles.BootstrapCenter, margin: "1rem"}}>
+                    <Button
+                        style={{margin: "0.5em", width: "75%"}}
+                    >
+                        Capture
+                    </Button></Col>
+            </Row>
+        </Col>
+
     )
     //}
 }
