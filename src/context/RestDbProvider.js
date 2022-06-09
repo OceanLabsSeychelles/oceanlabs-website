@@ -33,7 +33,6 @@ export default function RestDbProvider({children}) {
                 lastBuoy = {}
             }
         }
-        console.log(lastBuoy);
 
         let lastTank = false;
         index = 1;
@@ -46,7 +45,6 @@ export default function RestDbProvider({children}) {
                 lastTank = {}
             }
         }
-        console.log(lastTank);
 
         setDbData({
             ...dbData,

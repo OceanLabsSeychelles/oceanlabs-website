@@ -22,7 +22,10 @@ export default function Capture() {
             navigator.geolocation.getCurrentPosition(function (position) {
                 let coordinates = [position.coords.latitude, position.coords.longitude];
                 setLocation(coordinates);
-                console.log(coordinates);
+                map.current.flyTo({
+                    center:{coordinates},
+                    essential: true
+                });
             });
         }
     }, [])
