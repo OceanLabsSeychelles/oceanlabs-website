@@ -20,6 +20,7 @@ export default function Capture() {
 
 
     function locate(){
+        console.log("I RAN")
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 let coordinates = [position.coords.latitude, position.coords.longitude];
@@ -33,7 +34,10 @@ export default function Capture() {
         }
     }
 
-    setInterval(locate, 500);
+    setInterval(locate, 5000);
+    useEffect(() => {
+        locate();
+    }, [])
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
