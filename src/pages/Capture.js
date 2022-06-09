@@ -35,7 +35,7 @@ export default function Capture() {
         console.log(`More or less ${crd.accuracy} meters.`);
         setLat(crd.latitude);
         setLng(crd.longitude);
-        map.current.setCenter([crd.longitude,crd.longitude]);
+        map.current.setCenter([crd.longitude,crd.latitude]);
         map.current.setZoom(20);
         marker.setLngLat([crd.longitude, crd.latitude]);
     }
