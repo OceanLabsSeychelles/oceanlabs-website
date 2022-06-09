@@ -22,13 +22,23 @@ export default function Capture() {
     function locate(){
         console.log("I RAN")
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                let coordinates = [position.coords.latitude, position.coords.longitude];
-                console.log(coordinates);
-                setLocation(coordinates);
-                marker.setLngLat([position.coords.latitude, position.coords.lat]);
-                map.current.setCenter([position.coords.latitude, position.coords.lat]);
-            });
+            navigator.permissions
+                .query({ name: "geolocation" })
+                .then(function (result) {
+                    if (result.state === "granted") {
+                        console.log(result.state);
+                        //If granted then you can directly call your function here
+                    } else if (result.state === "prompt") {
+                        console.log(result.state);
+                    } else if (result.state === "denied") {
+                        //If denied then you have to show instructions to enable location
+                    }
+                    result.onchange = function () {
+                        console.log(result.state);
+                    };
+                });
+        } else {
+            alert("Sorry Not available!");
         }
     }
 
