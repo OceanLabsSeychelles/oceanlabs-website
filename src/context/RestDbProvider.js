@@ -3,7 +3,7 @@ import React, {createContext, useEffect, useState} from "react";
 export const RestDbContext = createContext({});
 
 export default function RestDbProvider({children}) {
-    const [dbData, setDbData] = useState({state: "idle", lastBuoy: {}, lastTank: {}, last10: [], allBuoy:[]});
+    const [dbData, setDbData] = useState({state: "idle", lastBuoy: {}, lastTank: {}, last10: [], allBuoy:[], allCapture:[]});
 
     async function fetchData() {
         setDbData({...dbData, state: 'fetching'})
@@ -21,6 +21,9 @@ export default function RestDbProvider({children}) {
         data = data.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
 
         const allTank = data.filter(d=>d.tank==='DemoBuoy' && d.id >= 1414);
+
+        const allCapture = data.filter(d=>d.tank==='RemoteCapture');
+        console.log(allCapture)
 
         let lastBuoy = false;
         let index = 1;
@@ -52,6 +55,7 @@ export default function RestDbProvider({children}) {
             lastBuoy: lastBuoy,
             lastTank: lastTank,
             last10: data.slice(data.length - 10, data.length).reverse(),
+            allCapture:allCapture,
             allBuoy:allTank,
         });
     }

@@ -10,6 +10,7 @@ import Facility from "./pages/Facility";
 import BuoyStatic from "./pages/BuoyStatic";
 import DataViewer from "./pages/DataViewer";
 import Capture from "./pages/Capture"
+import DisplayCapture from "./pages/DisplayCapture";
 import {RestDbContext} from "./context/RestDbProvider";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
@@ -27,6 +28,7 @@ export default function App() {
                     <Route path="buoylive" element={<BuoyLive/>}/>
                     <Route path="data" element={<DataViewer/>}/>
                     <Route path="capture" element={<Capture/>}/>
+                    <Route path="display" element={<DisplayCapture/>}/>
                 </Routes>
             </BrowserRouter>
         );

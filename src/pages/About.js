@@ -39,6 +39,11 @@ export default function About() {
                                 className="btn btn-primary"> Buoy Demonstration</Button>
                         </Link>
                             <br/><br/>
+                        <Link to={'/display'}>
+                            <Button style={{width:'100%'}}
+                                    className="btn btn-primary"> Remote Capture</Button>
+                        </Link>
+                        <br/><br/>
 
                     </Card.Body>
                 </Card>
