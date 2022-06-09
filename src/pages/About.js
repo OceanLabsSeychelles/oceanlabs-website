@@ -1,8 +1,8 @@
 import React from 'react'
-import {Card, Col, Row, Image} from "react-bootstrap";
+import {Card, Col, Row, Image, Button} from "react-bootstrap";
 import Styles from "../components/Styles";
 import logo from "../assets/logo1.png";
-import bg from "../assets/banner2.jpg";
+import {Link} from 'react-router-dom';
 import banner from "../assets/banner2.jpg";
 
 export default function About() {
@@ -34,9 +34,12 @@ export default function About() {
                                 Licensed to: Nature Seychelles
                             </p>
                         </Card.Text>
+                        <Link to={'/buoylive'}>
+                        <Button style={{width:'100%'}}
+                                className="btn btn-primary"> Buoy Demonstration</Button>
+                        </Link>
+                            <br/><br/>
 
-                        <button style={{width:'100%'}} className="btn btn-primary">Live Buoy Demonstration</button><br/><br/>
-                        <button style={{width:'100%'}} className="btn btn-primary">Live Aquaculture Demonstration</button>
                     </Card.Body>
                 </Card>
             </Col>
