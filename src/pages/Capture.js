@@ -17,7 +17,7 @@ export default function Capture() {
     const [zoom, setZoom] = useState(9);
 
 
-    useEffect(() => {
+    function locate(){
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 let coordinates = [position.coords.latitude, position.coords.longitude];
@@ -28,7 +28,9 @@ export default function Capture() {
                 });
             });
         }
-    }, [])
+    }
+
+    setInterval(locate, 500);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
