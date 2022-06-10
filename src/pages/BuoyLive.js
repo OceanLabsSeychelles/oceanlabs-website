@@ -54,7 +54,7 @@ export default function BuoyLive() {
 
             const latestMarker = new mapboxgl.Marker();
             let latestPopup = new mapboxgl.Popup({"open":'true'});
-            latestPopup.setHTML(`<p><b>Capture Time (UTC):</b> ${restDb.lastBuoy.captureTime}<br/><b>Signal Strength (dB):</b> ${restDb.lastBuoy.rssi}<br/><b>Battery (V):</b> ${Number(restDb.lastBuoy.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
+            latestPopup.setHTML(`<p><b>Capture Time (UTC):</b> ${restDb?.lastBuoy?.captureTime}<br/><b>Signal Strength (dB):</b> ${restDb?.lastBuoy?.rssi}<br/><b>Battery (V):</b> ${Number(restDb?.lastBuoy?.battery / 1024 * 3.3 * 1.97).toFixed(3)}<br/></p>`);
 
             latestMarker.setLngLat([restDb.lastBuoy.lng, restDb.lastBuoy.lat]);
             latestMarker.setPopup(latestPopup);

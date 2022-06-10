@@ -20,10 +20,9 @@ export default function RestDbProvider({children}) {
         let data = await response.json();
         data = data.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
 
-        const allTank = data.filter(d=>d.tank==='DemoBuoy' && d.id >= 1414);
+        const allTank = data.filter(d=>d.tank==='DemoBuoy' && d.id >= 1400);
 
         const allCapture = data.filter(d=>d.tank==='RemoteCapture');
-        console.log(allCapture)
 
         let lastBuoy = false;
         let index = 1;

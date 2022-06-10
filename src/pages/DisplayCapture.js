@@ -27,26 +27,15 @@ export default function DisplayCapture() {
         });
     });
 
-    useEffect(() => {
-        if (!map.current) return; // wait for map to initialize
-        map.current.on("move", () => {
-            //setLng(map.current.getCenter().lng.toFixed(4));
-            //setLat(map.current.getCenter().lat.toFixed(4));
-            setZoom(map.current.getZoom().toFixed(2));
-        });
-
-    });
-
 
     async function fetchLastBuoyPost() {
         if (restDb.state !== 'fetching' && restDb.state !== 'idle') {
             let last = []
             restDb?.allCapture?.forEach(buoy=>{
+                console.log(buoy)
                 let p = new mapboxgl.Popup();
-                p.setHTML(`<p><b>Signal Strength (dB):</b> ${buoy?.rssi}<br/>`);
-
-
-                const marker = new mapboxgl.Marker({ "color": "#5e02b4" });
+                p.setHTML(`<p><b>Capture Time (UTC):</b> ${buoy?.captureTime}<br/><b>Signal Strength (dB):</b> ${buoy?.rssi}<br/>`);
+                const marker = new mapboxgl.Marker();
                 marker.setLngLat([buoy.lng, buoy.lat]);
                 marker.setPopup(p);
                 marker.addTo(map.current);

@@ -26,8 +26,8 @@ export default function Header() {
                         <NavDropdown title="Live" id="basic-nav-dropdown" style={{textAlign:'center'}}>
                             <NavDropdown.Item href="">Aquaculture</NavDropdown.Item>
                             <NavDropdown.Item href="/buoylive">Buoy</NavDropdown.Item>
-                            <NavDropdown.Item href="/data">Raw Data</NavDropdown.Item>
                             <NavDropdown.Item href="/display">Remote Capture</NavDropdown.Item>
+                            <NavDropdown.Item href="/data">Raw Data</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 

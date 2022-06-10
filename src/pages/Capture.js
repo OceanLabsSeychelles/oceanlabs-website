@@ -88,7 +88,7 @@ export default function Capture() {
 
     return (
         <Col style={{height: '100vh'}}>
-            <Row style={{height: '85%'}} className={"bg-white"}>
+            <Row style={{height: '75%'}} className={"bg-white"}>
                 <Col
                     style={{height: "100%", backgroundColor: "rgb(30,44,75)"}}
                 >
@@ -98,13 +98,14 @@ export default function Capture() {
             <Row style={{...Styles.BootstrapCenter, backgroundColor: 'lightgray', height: '15%'}}>
                 <form onSubmit={() => {
                 }}>
-                    <label>
-                        RSSI:
-                        <input type="text" value={rssi} onChange={(event) => {
+                    <Row>
+                    <Col xs={8}>
+                        <input type="text" value={rssi} placeholder={"Enter RSSI"} onChange={(event) => {
                             console.log(event.target);
                             setRssi(event.target.value)
                         }}/>
-                    </label>
+                    </Col>
+                    <Col xs={4}>
                     <Button onClick={() => {
                         console.log('clicked')
                         let xhr = new XMLHttpRequest();
@@ -123,11 +124,13 @@ export default function Capture() {
                             }
                             setTimeout(()=>{setRssi("")},2000)
                         };
-
-                        let data = {tank:'RemoteCapture',rssi:Number(rssi), lat:lat, lng:lng}
+                        let dateTime = new Date;
+                        let data = {tank:'RemoteCapture',rssi:Number(rssi), lat:lat, lng:lng, captureTime:dateTime.toISOString()}
 
                         xhr.send(JSON.stringify(data));
                     }}>Submit</Button>
+                    </Col>
+</Row>
                 </form>
             </Row>
         </Col>
