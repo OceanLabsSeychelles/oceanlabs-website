@@ -1,13 +1,11 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-
+import { render } from 'react-snapshot';
 import ContextWrapper from "./context/ContextWrapper";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
 
-root.render(
+render(
   <StrictMode>
     <ContextWrapper/>
   </StrictMode>
+    ,document.getElementById('root')
 );
