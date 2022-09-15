@@ -9,7 +9,7 @@ export default function Home() {
 
     let backgroundImgStyle = {
         color: "navy",
-        backgroundColor: "DodgerBlue",
+        backgroundColor: "navy",
         backgroundImage: `url(${banner})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -18,6 +18,8 @@ export default function Home() {
         width: "100%",
         padding: "0",
         backgroundClip: "border-box",
+        display: "flex",
+        flexDirection: "column",
     };
 
     let titleStyle = {
