@@ -11,7 +11,7 @@ export default function Home() {
         color: "navy",
         backgroundImage: `url(${banner})`,
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "repeat",
         backgroundSize: "cover",
         height: "100vh",
         padding: "0",
