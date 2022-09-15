@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import banner from "../assets/banner2.jpg";
-import bouy_proto1_open from "../assets/bouy_proto1_open.jpeg";
+import bouyProto1Open from "../assets/bouy_proto1_open.jpeg";
 
 export default function Home() {
 
@@ -47,7 +47,7 @@ export default function Home() {
                         <Card.Title>
                             <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
                         </Card.Title>
-                        <Card.Img class="img-responsive center-block"  src={bouy_proto1_open}/>
+                        <Card.Img class="img-responsive center-block"  src={bouyProto1Open}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
