@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import banner from "../assets/banner2.jpg";
-//import logo from "../assets/logo1.png";
+import logo from "../assets/logo1.png";
 
 export default function Home() {
 
