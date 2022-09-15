@@ -41,15 +41,11 @@ export default function Home() {
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
-                            <Link to={'/buoylive'}>
+                            <Link to={'/sandbox'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Buoy Demonstration</Button>
+                                        className="btn btn-primary"> Sandbox Demonstration</Button>
                             </Link>
                             <br/><br/>
-                            <Link to={'/display'}>
-                                <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Remote Capture</Button>
-                            </Link>
                         </Card.Body>
                     </Card>
                     <br/>
