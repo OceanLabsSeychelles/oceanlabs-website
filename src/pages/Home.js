@@ -18,8 +18,7 @@ export default function Home() {
         width: "100%",
         padding: "0",
         backgroundClip: "border-box",
-        display: "flex",
-        flexDirection: "column",
+
     };
 
     let titleStyle = {
