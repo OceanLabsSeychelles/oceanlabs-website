@@ -14,6 +14,7 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         height: "100vh",
+        width: "100%",
         padding: "0",
     };
 
