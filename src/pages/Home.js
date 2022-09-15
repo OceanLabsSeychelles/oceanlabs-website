@@ -3,7 +3,7 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import banner from "../media/banner2.jpg";
 import buoy from "../media/bouyProto1Open.png";
-import logo from "../media/logo1.png";
+import buoyInternal from "../media/buoyProto2TopInternal.png";
 
 export default function Home() {
 
@@ -48,7 +48,7 @@ export default function Home() {
                         <Card.Title>
                             <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
                         </Card.Title>
-                        <Card.Img class="img-responsive center-block" src={buoy}/>
+                        <Card.Img class="img-responsive center-block" src={buoyInternal}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
@@ -70,7 +70,7 @@ export default function Home() {
                         <Card.Title>
                             <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
                         </Card.Title>
-                        <Card.Img class="img-responsive center-block"  src={logo}/>
+                        <Card.Img class="img-responsive center-block"  src={buoy}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}>We aim for the design and use of appropriate technology, suited to our climate, 
                             infrastructure and the needs of our society and environment.</p>
