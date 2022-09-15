@@ -8,7 +8,8 @@ import buoyInternal from "../media/buoyProto2TopInternal.png";
 export default function Home() {
 
     let backgroundImgStyle = {
-        background: "navy",
+        color: "navy",
+        backgroundColor: "DodgerBlue",
         backgroundImage: `url(${banner})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -16,6 +17,7 @@ export default function Home() {
         height: "100vh",
         width: "100%",
         padding: "0",
+        backgroundClip: "border-box",
     };
 
     let titleStyle = {
