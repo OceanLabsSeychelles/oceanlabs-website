@@ -30,8 +30,8 @@ export default function Home() {
     }
 
     let cardImgStyle = {
-        //maxWidth: "400px",
-        //maxHeight: "400px",
+        maxWidth: "400px",
+        maxHeight: "400px",
         className: "mr-3",
         objectFit: "cover",
         padding: "10px",
@@ -48,7 +48,7 @@ export default function Home() {
                         <Card.Title>
                             <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
                         </Card.Title>
-                        <Card.Img class="img-responsive center-block" style={cardImgStyle} src={buoy}/>
+                        <Card.Img class="img-responsive center-block" src={buoy}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
