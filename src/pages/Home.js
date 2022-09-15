@@ -8,7 +8,7 @@ import buoyInternal from "../media/buoyProto2TopInternal.png";
 export default function Home() {
 
     let backgroundImgStyle = {
-        color: "white",
+        color: "navy",
         backgroundImage: `url(${banner})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -28,17 +28,6 @@ export default function Home() {
         paddingTop: "2rem",
         borderRadius: "25px",
     }
-
-    let cardImgStyle = {
-        maxWidth: "400px",
-        maxHeight: "400px",
-        className: "mr-3",
-        objectFit: "cover",
-        padding: "10px",
-        borderRadius: "15px",
-        marginLeft: "auto",
-        marginRight: "auto",
-    };
 
     return (
         <div style={backgroundImgStyle}>
@@ -79,10 +68,6 @@ export default function Home() {
                                         className="btn btn-primary"> Buoy Demonstration</Button>
                             </Link>
                             <br/><br/>
-                            <Link to={'/display'}>
-                                <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Remote Capture</Button>
-                            </Link>
                         </Card.Body>
                     </Card>
                     <br/>
