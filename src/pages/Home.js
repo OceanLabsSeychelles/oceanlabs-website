@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import banner from "../assets/banner2.jpg";
-import logo from "../assets/logo1.png";
-import buoy from "../media/bouyProto1Open.jpg";
+import banner from "../media/banner2.jpg";
+import buoy from "../media/bouyProto1Open.png";
+import logo from "../media/logo1.png";
 
 export default function Home() {
 
