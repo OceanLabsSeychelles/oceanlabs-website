@@ -1,9 +1,9 @@
-import React from 'react'
-import {Card, Col, Row, Image, Button} from "react-bootstrap";
-import Styles from "../components/Styles";
-import logo from "../assets/logo1.png";
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import banner from "../assets/banner2.jpg";
+import bouy_proto1_open from "../assets/bouy_proto1_open.jpeg";
+import logo from "../assets/logo1.png";
 
 export default function Home() {
 
@@ -29,6 +29,17 @@ export default function Home() {
         borderRadius: "25px",
     }
 
+    let cardImgStyle = {
+        maxWidth: "400px",
+        maxHeight: "400px",
+        className: "mr-3",
+        objectFit: "cover",
+        padding: "10px",
+        borderRadius: "15px",
+        marginLeft: "auto",
+        marginRight: "auto",
+    };
+
     return (
         <div style={backgroundImgStyle}>
             <Row className="m-auto align-self-center">
@@ -39,7 +50,11 @@ export default function Home() {
                         </Card.Title>
                         <Card.Img class="img-responsive center-block"  src={logo}/>
                         <Card.Body>
-                            <p style={{padding:"1rem"}}>We deploy leading-edge hardware, software and analysis tools for researchers and conservation workers in the Indian Ocean.</p>
+                            <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
+                            researchers and conservation workers in the Indian Ocean.</p>
+                            <img style={cardImgStyle} src={bouy_proto1_open} />
+                            <p style={{padding:"1rem"}}>We aim for the design and use of appropriate technology, suited to our climate, 
+                            infrastructure and the needs of our society and environment.</p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
                                         className="btn btn-primary"> Buoy Demonstration</Button>
