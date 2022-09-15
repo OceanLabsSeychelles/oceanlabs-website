@@ -18,7 +18,7 @@ export default function Home() {
         width: "100%",
         padding: "0",
         backgroundClip: "border-box",
-
+        minHeight: "100vh",
     };
 
     let titleStyle = {
@@ -92,5 +92,6 @@ export default function Home() {
                 </Col>
             </Row>
         </div>
+
     );
 }
