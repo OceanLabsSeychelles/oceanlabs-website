@@ -13,7 +13,7 @@ export default function Home() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: "100%",
+        height: "100vmax",
         padding: "0",
     };
 
