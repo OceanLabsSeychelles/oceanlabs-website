@@ -8,7 +8,7 @@ import buoyInternal from "../media/buoyProto2TopInternal.png";
 export default function Home() {
 
     let backgroundImgStyle = {
-        color: "navy",
+        background: "navy",
         backgroundImage: `url(${banner})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
