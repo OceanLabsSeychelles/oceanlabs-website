@@ -52,11 +52,6 @@ export default function Home() {
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
-                            <div class="text-center">
-                            <img src={buoy} style={cardImgStyle} alt="buoy" class="img-responsive center-block" />
-                            </div>
-                            <p style={{padding:"1rem"}}>We aim for the design and use of appropriate technology, suited to our climate, 
-                            infrastructure and the needs of our society and environment.</p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
                                         className="btn btn-primary"> Buoy Demonstration</Button>
@@ -77,11 +72,6 @@ export default function Home() {
                         </Card.Title>
                         <Card.Img class="img-responsive center-block"  src={logo}/>
                         <Card.Body>
-                            <div class="text-center">
-                            <img src={buoy} style={cardImgStyle} alt="buoy" class="img-responsive center-block" />
-                            </div>
-                            <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
-                            researchers and conservation workers in the Indian Ocean.</p>
                             <p style={{padding:"1rem"}}>We aim for the design and use of appropriate technology, suited to our climate, 
                             infrastructure and the needs of our society and environment.</p>
                             <Link to={'/buoylive'}>
