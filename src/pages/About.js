@@ -71,11 +71,11 @@ const About = () => {
                             environment while at the same time on par with global standards.</p>
                         <p>Our engineering skills are focused on marine and environmental
                         remote sensing projects, as well as Internet of Things projects,
-                        for Seychelles’ agricultural sectors, industries, organisations and
+                        for regional agricultural sectors, industries, organisations and
                         governmental units.</p>
                             <p> We aim for the design and use of appropriate technology, suited
-                        to our climate, infrastructure and the needs of our society and
-                        environment</p>
+                        to our climate, infrastructure and the needs of our societies and
+                        environments</p>
                         
                         <h4>Contact us at <a href = "mailto: oceanlabs.seychelles@gmail.com"><b>oceanlabs.seychelles@gmail.com</b></a></h4>
                     </Col>
