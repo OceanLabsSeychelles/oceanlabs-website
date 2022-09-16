@@ -43,8 +43,8 @@ export default function Home() {
                         </Card.Title>
                         <Card.Img class="img-responsive center-block" src={buoyInternal}/>
                         <Card.Body>
-                            <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
-                            researchers and conservation workers in the Indian Ocean.</p>
+                            <p style={{padding:"1rem"}}>OceanLabs Seychelles' engineering projects see the design and implementation of bespoke devices 
+                            for environmental monitoring and process control.</p>
                             <Link to={'/sandbox'}>
                                 <Button style={{width:'100%'}}
                                         className="btn btn-primary"> Sandbox Demonstration</Button>
@@ -61,7 +61,7 @@ export default function Home() {
                         </Card.Title>
                         <Card.Img class="img-responsive center-block"  src={buoy}/>
                         <Card.Body>
-                            <p style={{padding:"1rem"}}>OceanLabs Seychelles designs and deploys leading-edge hardware, software and analysis tools for 
+                            <p style={{padding:"1rem"}}>We are able to design and deploy leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
