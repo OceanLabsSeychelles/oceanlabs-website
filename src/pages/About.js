@@ -76,6 +76,10 @@ const About = () => {
                             <p> We aim for the design and use of appropriate technology, suited
                         to our climate, infrastructure and the needs of our society and
                         environment</p>
+                        <Link to={'mailto: oceanlabs.seychelles@gmail.com'}>
+                                <Button style={{width:'100%'}}
+                                        className="btn btn-primary"> Send us an email!</Button>
+                            </Link>
                         <h4>Contact us at <a href = "mailto: oceanlabs.seychelles@gmail.com"><b>oceanlabs.seychelles@gmail.com</b></a></h4>
                     </Col>
                     <Col xs={12} md={4}>
