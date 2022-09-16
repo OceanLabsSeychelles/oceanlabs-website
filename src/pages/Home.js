@@ -46,9 +46,9 @@ export default function Home() {
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles' engineering projects see the design and implementation of bespoke devices 
                             for environmental monitoring and process control.</p>
-                            <Link to={'/sandbox'}>
+                            <Link to={'/pcb'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Sandbox Demonstration</Button>
+                                        className="btn btn-primary"> Engineering Capabilities</Button>
                             </Link>
                             <br/><br/>
                         </Card.Body>
@@ -64,9 +64,9 @@ export default function Home() {
                         <Card.Body>
                             <p style={{padding:"1rem"}}>We are able to design and deploy leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
-                            <Link to={'/buoylive'}>
+                            <Link to={'/facility'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Buoy Demonstration</Button>
+                                        className="btn btn-primary"> See our Aquaculture Monitoring Demo</Button>
                             </Link>
                             <br/><br/>
                         </Card.Body>
