@@ -48,7 +48,7 @@ export default function Home() {
                             for environmental monitoring and process control.</p>
                             <Link to={'/pcb'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Engineering Capabilities</Button>
+                                        className="btn btn-primary"> See an example of our engineering</Button>
                             </Link>
                             <br/><br/>
                         </Card.Body>
@@ -66,7 +66,7 @@ export default function Home() {
                             researchers and conservation workers in the Indian Ocean.</p>
                             <Link to={'/facility'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> See our Aquaculture Monitoring Demo</Button>
+                                        className="btn btn-primary"> Visit our aquaculture monitoring demo</Button>
                             </Link>
                             <br/><br/>
                         </Card.Body>
@@ -85,7 +85,7 @@ export default function Home() {
                             </p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Buoy Demonstration</Button>
+                                        className="btn btn-primary"> Explore our remote sensing buoy demo</Button>
                             </Link>
                             <br/><br/>
                         </Card.Body>
