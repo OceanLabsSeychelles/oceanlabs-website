@@ -39,7 +39,7 @@ export default function Home() {
                 <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
                     <Card style={{background: "rgba(255,255,255,0.75)",}}>
                         <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Bespoke<b> Solutions</b></h1>
+                            <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
                         </Card.Title>
                         <Card.Img class="img-responsive center-block" src={buoyInternal}/>
                         <Card.Body>
