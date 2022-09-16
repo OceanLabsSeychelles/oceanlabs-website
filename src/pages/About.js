@@ -76,7 +76,7 @@ const About = () => {
                             <p> We aim for the design and use of appropriate technology, suited
                         to our climate, infrastructure and the needs of our society and
                         environment</p>
-                        <h4>Contact us at <a href = "mailto: oceanlabs.seychelles@gmail.com"><b>oceanlabs.seychelles@gmail.com</b></a></h4>
+                        <h4>Contact us at <a href = "mailto: oceanlabs.seychelles@gmail.com" style="color: white"><b>oceanlabs.seychelles@gmail.com</b></a></h4>
                     </Col>
                     <Col xs={12} md={4}>
                         <img style={selfieStyle} src={brett} />
