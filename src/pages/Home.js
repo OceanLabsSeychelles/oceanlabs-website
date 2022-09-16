@@ -46,9 +46,9 @@ export default function Home() {
                         <Card.Body>
                             <p style={{padding:"1rem"}}>OceanLabs Seychelles' engineering projects see the design and implementation of bespoke devices 
                             for environmental monitoring and process control.</p>
-                            <Link to={'/pcb'}>
+                            <Link to={'/about'}>
                                 <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> See an example of our engineering</Button>
+                                        className="btn btn-primary"> Learn more about OceanLabs Seychelles</Button>
                             </Link>
                             <br/><br/>
                         </Card.Body>
