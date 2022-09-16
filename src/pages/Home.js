@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import banner from "../media/banner2.jpg";
 import buoy from "../media/bouyProto1Open.png";
 import buoyInternal from "../media/buoyProto2TopInternal.png";
+import cousinMap from "../media/cousinMap.png";
 
 export default function Home() {
 
@@ -77,7 +78,7 @@ export default function Home() {
                         <Card.Title>
                             <h1 style={{paddingTop:"2rem"}}>Remote<b> Sensing</b></h1>
                         </Card.Title>
-                        <Card.Img class="img-responsive center-block"  src={buoy}/>
+                        <Card.Img class="img-responsive center-block"  src={cousinMap}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}>Our devices can collect data in even the most remote ocean and island locations, 
                             safely transmitting that data to where your team needs it.
