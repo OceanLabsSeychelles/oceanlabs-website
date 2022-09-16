@@ -39,7 +39,7 @@ export default function Home() {
                 <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
                     <Card style={{background: "rgba(255,255,255,0.75)",}}>
                         <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
+                            <h1 style={{paddingTop:"2rem"}}>Bespoke<b> Solutions</b></h1>
                         </Card.Title>
                         <Card.Img class="img-responsive center-block" src={buoyInternal}/>
                         <Card.Body>
@@ -57,12 +57,12 @@ export default function Home() {
                 <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
                     <Card style={{background: "rgba(255,255,255,0.75)",}}>
                         <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
+                            <h1 style={{paddingTop:"2rem"}}>Tech in<b> Conservation</b></h1>
                         </Card.Title>
                         <Card.Img class="img-responsive center-block"  src={buoy}/>
                         <Card.Body>
-                            <p style={{padding:"1rem"}}>We aim for the design and use of appropriate technology, suited to our climate, 
-                            infrastructure and the needs of our society and environment.</p>
+                            <p style={{padding:"1rem"}}>OceanLabs Seychelles deploys leading-edge hardware, software and analysis tools for 
+                            researchers and conservation workers in the Indian Ocean.</p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
                                         className="btn btn-primary"> Buoy Demonstration</Button>
@@ -75,11 +75,11 @@ export default function Home() {
                 <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
                     <Card style={{background: "rgba(255,255,255,0.75)",}}>
                         <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
+                            <h1 style={{paddingTop:"2rem"}}>Appropriate<b> Technology</b></h1>
                         </Card.Title>
                         <Card.Img class="img-responsive center-block"  src={buoy}/>
                         <Card.Body>
-                            <p style={{padding:"1rem"}}>We aim for the design and use of appropriate technology, suited to our climate, 
+                            <p style={{padding:"1rem"}}>We design and use appropriate technology, suited to our climate, 
                             infrastructure and the needs of our society and environment.</p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
