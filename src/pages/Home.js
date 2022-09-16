@@ -45,7 +45,7 @@ export default function Home() {
                         <Card.Img class="img-responsive center-block" src={buoyInternal}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}><b>OceanLabs Seychelles' engineering projects see the design and implementation of bespoke devices 
-                            for environmental monitoring and process control.</b></b></p>
+                            for environmental monitoring and process control.</b></p>
                             <Link to={'/pcb'}>
                                 <Button style={{width:'100%'}}
                                         className="btn btn-primary"> See an example of our engineering</Button>
