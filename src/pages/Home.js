@@ -91,9 +91,7 @@ export default function Home() {
                     <br/>
                 </Col>
             </Row>
-            <p style={{textAlign:"center"}}>
-            © 2022 OceanLabs (Seychelles) (Pty) Ltd
-            </p>
+
         </div>
 
     );
