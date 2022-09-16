@@ -1,15 +1,15 @@
 // Content for the OceanLab's "About" page
 
 import React from "react";
-import {Row, Col, Card, Button} from "react-bootstrap";
-import Styles from "../components/Styles";
+import { Col, Row } from "react-bootstrap";
 import BrettsMedia from "../components/BrettsMedia";
-import pcb from "../media/pcb.png";
-import turtle from "../media/turtle.jpg";
-import plot from "../media/pairplot.jpg";
-import table from "../media/table.jpg";
-import daniel from "../media/daniel.png";
+import Styles from "../components/Styles";
 import brett from "../media/brett.jpg";
+import daniel from "../media/daniel.png";
+import plot from "../media/pairplot.jpg";
+import pcb from "../media/pcb.png";
+import table from "../media/table.jpg";
+import turtle from "../media/turtle.jpg";
 
 let designMedia = {
     title: "Design",
@@ -58,9 +58,6 @@ const About = () => {
     let media = [designMedia, deployMedia, analyzeMedia, affectMedia]
     return (
         <div>
-            <Row style={Styles.BootstrapCenter}>
-                <BrettsMedia media={media}/>
-            </Row>
             <div class="bg-dark text-light">
                 <br/>
                 <Row>
@@ -87,6 +84,9 @@ const About = () => {
 
                 </Row>
             </div>
+            <Row style={Styles.BootstrapCenter}>
+                <BrettsMedia media={media}/>
+            </Row>
         </div>
     );
 };
