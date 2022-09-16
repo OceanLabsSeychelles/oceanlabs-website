@@ -80,7 +80,7 @@ export default function Home() {
                         <Card.Img class="img-responsive center-block"  src={buoy}/>
                         <Card.Body>
                             <p style={{padding:"1rem"}}>Our devices can collect data in even the most remote locations and 
-                            safely transmit it to where you need it.
+                            safely transmit it to where your team needs it.
                             </p>
                             <Link to={'/buoylive'}>
                                 <Button style={{width:'100%'}}
