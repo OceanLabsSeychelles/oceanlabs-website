@@ -59,8 +59,8 @@ export default function Home() {
                         <Card.Title>
                             <h1 style={{paddingTop:"2rem"}}>Tech in<b> Conservation</b></h1>
                         </Card.Title>
-                        <iframe width="3424" height="1120" src="https://www.youtube.com/embed/6LG0MUOXmeU" title="OceanLabs Remote Sensing Buoy 1080p" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <Card.Body>
+                            <iframe width="3424" height="1120" src="https://www.youtube.com/embed/6LG0MUOXmeU" title="OceanLabs Remote Sensing Buoy 1080p" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <p style={{padding:"1rem"}}>We are able to design and deploy leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
                             <Link to={'/facility'}>
