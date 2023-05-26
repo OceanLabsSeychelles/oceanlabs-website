@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import banner from "../media/banner2.jpg";
+import buoy from "../media/bouyProto1Open.png";
 import buoyInternal from "../media/buoyProto2TopInternal.png";
 import cousinMap from "../media/cousinMap.png";
 
@@ -60,7 +61,10 @@ export default function Home() {
                             <h1 style={{paddingTop:"2rem"}}>Tech in<b> Conservation</b></h1>
                         </Card.Title>
                         <Card.Body>
-                            <iframe width="3424" height="1120" src="https://www.youtube.com/embed/6LG0MUOXmeU" title="OceanLabs Remote Sensing Buoy 1080p" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="3424" height="1120" src="https://www.youtube.com/embed/6LG0MUOXmeU" title="OceanLabs Remote Sensing Buoy 1080p" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </Card.Body>
+                        <Card.Img class="img-responsive center-block"  src={buoy}/>
+                        <Card.Body>
                             <p style={{padding:"1rem"}}>We are able to design and deploy leading-edge hardware, software and analysis tools for 
                             researchers and conservation workers in the Indian Ocean.</p>
                             <Link to={'/facility'}>
