@@ -65,6 +65,9 @@ const About = () => {
                         <img style={selfieStyle} src={daniel} />
                     </Col>
                     <Col xs={12} md={4}>
+                        <img style={selfieStyle} src={brett} />
+                    </Col>
+                    <Col xs={12} md={4}>
                         <h1>Made to create</h1>
                         <p>OceanLabs Seychelles can be summarized as our drive to grow the
                         unique engineering culture of Seychelles, aligned to our
@@ -79,10 +82,6 @@ const About = () => {
                         
                         <h4>Contact us at <a href = "mailto: oceanlabs.seychelles@gmail.com"><b>oceanlabs.seychelles@gmail.com</b></a></h4>
                     </Col>
-                    <Col xs={12} md={4}>
-                        <img style={selfieStyle} src={brett} />
-                    </Col>
-
                 </Row>
             </div>
             <Row style={Styles.BootstrapCenter}>
