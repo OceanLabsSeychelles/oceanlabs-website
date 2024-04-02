@@ -25,7 +25,7 @@ export default function Hero() {
                         transform: 'translate(-50%, -50%)'
                     }}
                 >
-                    <source src={sample} type="video/mp4" />
+                    <source src={'https://sfasurf-8806.restdb.io/media/660c711e04114f0f00000992'} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <Box
