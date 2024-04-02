@@ -2,6 +2,13 @@
   font-family: sans-serif;
   text-align: center;
 }
-html, body {
-  min-height: 100%;
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black!important;
 }

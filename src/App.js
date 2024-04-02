@@ -1,48 +1,61 @@
-import React, {useContext} from "react";
-import "../node_modules/react-vis/dist/style.css";
-import "bootstrap/dist/css/bootstrap.css";
-import Header from "./components/Header";
-import "./styles.css"
-import ProbeView from "./pages/ProbeView"
-import Home from "./pages/Home";
-import BuoyLive from "./pages/BuoyLive";
-import Facility from "./pages/Facility";
-import BuoyStatic from "./pages/BuoyStatic";
-import DataViewer from "./pages/DataViewer";
-import Capture from "./pages/Capture"
-import DisplayCapture from "./pages/DisplayCapture";
-import About from "./pages/About"
-import PCB from "./pages/Pcb";
-import Sandbox from "./pages/Sandbox";
-import Robot from "./pages/Robot";
-import {RestDbContext} from "./context/RestDbProvider";
+import { StrictMode } from "react";
+import { Provider } from 'react-redux';
+import Header from "./components/Header"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import store from './store';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import SampleDataProvider from "./context/SampleDataProvider";
+import Home from "./pages/Home";
+import Buoy from "./pages/ModularBuoy";
+import BuoyStatic from "./pages/BuoyStatic";
+import ModularBuoyAssembly from "./pages/ModularBuoyAssembly";
+import AboutDFAD from "./pages/AboutDFAD";
+import BuoyConfigurations from "./pages/BuoyConfigurations";
+import ProductPage from "./pages/ProductPage";
 
-export default function App() {
-    const {restDb} = useContext(RestDbContext);
-    if(restDb.state !== 'idle') {
-        return (
-            <BrowserRouter>
-                <Header/>
-                <Routes>
-                    <Route index element={<Home/>}/>
-                    <Route path="facility" element={<Facility/>}/>
-                    <Route path="robot" element={<Robot/>}/>
-                    <Route path="sandbox" element={<Sandbox/>}/>
-                    <Route path="pcb" element={<PCB/>}/>
-                    <Route path="about" element={<About/>}/>
-                    <Route path="probe" element={<ProbeView/>}/>
-                    <Route path="buoystatic" element={<BuoyStatic/>}/>
-                    <Route path="buoylive" element={<BuoyLive/>}/>
-                    <Route path="data" element={<DataViewer/>}/>
-                    <Route path="capture" element={<Capture/>}/>
-                    <Route path="display" element={<DisplayCapture/>}/>
-                </Routes>
-            </BrowserRouter>
-        );
-    }else{
-        return(
-            <></>
-        )
+const colors = {
+    brand: {
+        50: "#ecefff",
+        100: "#cbceeb",
+        200: "#a9aed6",
+        300: "#888ec5",
+        400: "#666db3",
+        500: "#4d5499",
+        600: "#3c4178",
+        700: "#2a2f57",
+        800: "#181c37",
+        900: "#080819"
     }
+};
+const config = {
+    initialColorMode: "dark",
+    useSystemColorMode: false
+};
+
+const theme = extendTheme({ colors, config });
+function App() {
+    return(
+    <StrictMode>
+        <Provider store={store}>
+            <ChakraProvider theme={theme}>
+                <SampleDataProvider>
+                    <BrowserRouter>
+                        <Header/>
+                        <Routes>
+                            <Route index element={<Home/>}/>
+                            <Route path="buoy" element={<Buoy/>}/>
+                            <Route path="buoystatic" element={<BuoyStatic/>}/>
+                            <Route path="buoyassembly" element={<ModularBuoyAssembly/>}/>
+                            <Route path="aboutdfad" element={<AboutDFAD/>}/>
+                            <Route path="configs" element={<BuoyConfigurations/>}/>
+                            <Route path="product" element={<ProductPage/>}/>
+                        </Routes>
+                    </BrowserRouter>
+                </SampleDataProvider>
+            </ChakraProvider>
+        </Provider>
+    </StrictMode>
+    )
 }
+
+export default App;

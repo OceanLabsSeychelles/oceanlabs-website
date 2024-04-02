@@ -4,7 +4,8 @@ import React, {useEffect, useState, useRef, useContext} from "react";
 import mapboxgl, {Map, Marker} from "!mapbox-gl";
 import BuoyPlots from "../components/BuoyPlots";
 import {BackendContext} from "../context/SampleDataProvider";
-
+import {chakra} from "@chakra-ui/react";
+import 'mapbox-gl/dist/mapbox-gl.css';
 mapboxgl.accessToken =
     "pk.eyJ1IjoiYnJldHRtc21pdGgiLCJhIjoiY2t1NzFxNGt2MW9pNDJ2bzZqdmlibWJoZSJ9.lorLL3V1xySe1Gm75RvdNQ";
 
@@ -69,9 +70,11 @@ export default function BuoyStatic() {
         });
         map.current.on("load", function () {
             markers.forEach((marker) => {
-                const m = new Marker()
-                    .setLngLat([marker.lng, marker.lat])
-                    .addTo(map.current);
+                if (!isNaN(marker.lng) && !isNaN(marker.lat)) {
+                    new Marker()
+                        .setLngLat([marker.lng, marker.lat])
+                        .addTo(map.current);
+                }
             });
         });
     });
@@ -97,12 +100,12 @@ export default function BuoyStatic() {
             return (
                 <Card style={{textAlign: "center", width: '80%'}}>
                     <Card.Body>
-                        <Card.Title style={{padding: "1em"}}>
-                            <h3>View Deployment</h3>
+                        <Card.Title style={{padding: "1em"}} >
+                            <chakra.h3 color={"black"}>View Deployment</chakra.h3>
                         </Card.Title>
                         <Card.Text>
                             {markers.map((marker) => (
-                                <Row style={{padding: 10, }}>
+                                <Row key={marker.name} style={{padding: 10, }}>
                                     <Col xs={9} style={Styles.BootstrapCenter}>
                                         <Button
                                             style={{width: '90%'}}
@@ -142,7 +145,7 @@ export default function BuoyStatic() {
                 <Col
                     xs={12}
                     xl={8}
-                    style={{height: "95vh", backgroundColor: "rgb(30,44,75)"}}
+                    style={{height: "95vh"}}
                 >
                     <div ref={mapContainer} style={{height: "100%", width: "100%"}}/>
                 </Col>
@@ -152,7 +155,6 @@ export default function BuoyStatic() {
                     style={{
                         ...Styles.BootstrapCenter,
                         height: "95vh",
-                        backgroundColor: "rgb(30,44,75)"//"rgb(30,44,75)"
                     }}
                 >
                     {renderRight()}

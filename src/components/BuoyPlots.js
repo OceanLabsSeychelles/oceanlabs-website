@@ -3,6 +3,7 @@ import ResponsivePlot from "../components/ResponsivePlot";
 import {BackendContext} from "../context/SampleDataProvider";
 import Styles from "./Styles";
 import {Col, Row, Card, Button, ButtonGroup} from "react-bootstrap";
+import {chakra} from "@chakra-ui/react";
 
 export default function BuoyPlots(props) {
     const {Probes} = useContext(BackendContext);
@@ -43,7 +44,7 @@ export default function BuoyPlots(props) {
                         lg={2}
                         style={{transform: "rotate(-90deg)", fontSize: "0.75em"}}
                     >
-                        {vars.title}
+                        <chakra.p color={'black'}>{vars.title}</chakra.p>
                     </Col>
                     <Col lg={10}>
                         <ResponsivePlot
@@ -75,7 +76,7 @@ export default function BuoyPlots(props) {
         <Card style={{textAlign: "center", width: "90%"}}>
             <Card.Body>
                 <Card.Title style={{padding: "1em"}}>
-                    <h5>{Probes.buoy}</h5>
+                    <chakra.h5 color={'black'}>{Probes.buoy}</chakra.h5>
                 </Card.Title>
                 <Card.Text>
                     {renderPlotRow({title:"DO", data:Probes.do.data})}
