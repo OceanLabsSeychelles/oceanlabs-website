@@ -1,69 +1,73 @@
 import React, { useState } from "react";
-import { Row, Col, Card, Button, Alert } from "react-bootstrap";
-import Styles from "../components/Styles";
+import {
+    Box,
+    Flex,
+    Heading,
+    Text,
+    VStack,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
+    useStyleConfig,
+    useColorModeValue
+} from "@chakra-ui/react";
 
-
-export default function Embed (props){
+export default function Embed(props) {
     const [loaded, setLoaded] = useState("false");
     const [show, setShow] = useState(true);
-    let iframeStyle= {
+    const gradientBg = useColorModeValue('linear(to-br, teal.100, blue.200)', 'linear(to-br, teal.800, blue.800)');
 
+
+    let iframeStyle = {
         width: "100%",
         height: "91vh",
-    }
+    };
 
-    let titleStyle={background:"linear-gradient(\n          90deg,\n          rgba(0, 139, 139, 1) 0%,\n          rgba(188, 209, 255, 1) 100%\n  )",
-        paddingTop:"1.5rem",
-        paddingLeft:"1rem",
-        paddingBottom:"1rem",
-        width:"span",
+    let titleStyle = {
+        paddingTop: "1.5rem",
+        paddingLeft: "1rem",
+        paddingBottom: "1rem",
     };
 
     let loadHandler = () => {
-        setLoaded("true")
+        setLoaded("true");
     };
 
     function renderContent() {
-        return props.content.map((item, index) => {
-            return(
-                <p style={{textAlign:"left"}}>{item}</p>
-            );
-        });
+        return props.content.map((item, index) => (
+            <Text textAlign="left" key={index}>{item}</Text>
+        ));
     }
 
-    return(
-        <Row style={Styles.BootstrapCenter} className="m-auto align-self-center">
-            <Col xs={12} sm={3} >
-                <br/>
-
-                <Card>
-                    <Card.Title>
-                        <div fluid style={titleStyle} >
-                            <h1>
+    return (
+        <Flex  direction={{ base: "column", md: "row" }} justify="center" align="center" m="auto">
+            <Box width={{ base: "100%", md: "25%" }} p={4}>
+                <VStack spacing={4} align="stretch">
+                    <Box p={5} shadow="md" borderWidth="1px" flex="1" borderRadius="md">
+                        <Box style={titleStyle} bgGradient={gradientBg}>
+                            <Heading fontSize="xl">
                                 {props.weakTitle} <b>{props.strongTitle}</b>
-                            </h1>
-                        </div>
-                        <h3 style={{paddingLeft:"1rem", paddingTop:"1rem"}}>{props.subheading}</h3>
-                    </Card.Title>
-                    <Card.Body>
-                        {renderContent()}
-                        <p style={{textAlign:"left"}}><i>{props.instructions}</i></p>
-                    </Card.Body>
-                </Card>
-                <br/>
-                <Alert variant="warning" >Please allow a minute for the demo to load</Alert>
-                <br/>
-
-
-            </Col>
-            <Col xs={12} sm={9} style={Styles.BootstrapCenter}>
-                <iframe
-                    onLoad={loadHandler}
-                    src={props.src}
-                    style={iframeStyle}
-
-                />
-            </Col>
-        </Row>
-    )
+                            </Heading>
+                        </Box>
+                        <Text mt={4} style={{ paddingLeft: "1rem", paddingTop: "1rem" }}>
+                            {props.subheading}
+                        </Text>
+                        <Box p={5}>
+                            {renderContent()}
+                            <Text textAlign="left"><i>{props.instructions}</i></Text>
+                        </Box>
+                    </Box>
+                    <Alert status="warning">
+                        <AlertIcon />
+                        <AlertTitle mr={2}>Loading Delay</AlertTitle>
+                        <AlertDescription>Please wait for the demo to load.</AlertDescription>
+                    </Alert>
+                </VStack>
+            </Box>
+            <Box width={{ base: "100%", md: "75%" }} align="center">
+                <iframe onLoad={loadHandler} src={props.src} style={iframeStyle} title="demo" />
+            </Box>
+        </Flex>
+    );
 }

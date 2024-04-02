@@ -1,13 +1,12 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-
-import ContextWrapper from "./context/ContextWrapper";
-
+import { createRoot } from 'react-dom/client';
+import App from "./App";
 const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+const root = createRoot(rootElement); // create a root
+import {ColorModeScript} from "@chakra-ui/react";
 
 root.render(
-    <StrictMode>
-        <ContextWrapper/>
-    </StrictMode>
+    <>
+        <ColorModeScript initialColorMode={"dark"} />
+    <App />
+        </>
 );

@@ -1,103 +1,59 @@
 import React from 'react';
-import { Button, Card, Col, Row } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import banner from "../media/banner2.jpg";
-import buoy from "../media/bouyProto1Open.png";
-import buoyInternal from "../media/buoyProto2TopInternal.png";
-import cousinMap from "../media/cousinMap.png";
+import {
+    Box,
+    Flex,
+    Text,
+    HStack,
+    SimpleGrid,
+    Image,
+    Link,
+    Heading,
+    Container,
+    Spacer
+} from '@chakra-ui/react';
+import Hero from "../components/Hero"
 
-export default function Home() {
-
-    let backgroundImgStyle = {
-        color: "navy",
-        backgroundColor: "navy",
-        backgroundImage: `url(${banner})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        height: "100%",
-        width: "100%",
-        padding: "0",
-        backgroundClip: "border-box",
-        minHeight: "100vh",
-    };
-
-    let titleStyle = {
-        textAlign: "center",
-        align: "center",
-        color: "black",
-        background: "rgba(0,0,0,0.0)",
-        paddingBottom: "1rem",
-        paddingRight: "2rem",
-        paddingLeft: "2rem",
-        paddingTop: "2rem",
-        borderRadius: "25px",
-    }
-
+function HomePage() {
     return (
-        <div style={backgroundImgStyle}>
-            <Row className="m-auto align-self-center">
-                <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
-                    <Card style={{background: "rgba(255,255,255,0.75)",}}>
-                        <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Engineering<b> Solutions</b></h1>
-                        </Card.Title>
-                        <Card.Img class="img-responsive center-block" src={buoyInternal}/>
-                        <Card.Body>
-                            <p style={{padding:"1rem"}}>OceanLabs Seychelles' engineering projects see the design and implementation of bespoke devices 
-                            for environmental monitoring and process control.</p>
-                            <Link to={'/about'}>
-                                <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Learn more about OceanLabs Seychelles</Button>
-                            </Link>
-                            <br/><br/>
-                        </Card.Body>
-                    </Card>
-                    <br/>
-                </Col>
-                <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
-                    <Card style={{background: "rgba(255,255,255,0.75)",}}>
-                        <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Tech in<b> Conservation</b></h1>
-                        </Card.Title>
-                        <Card.Body>
-                        <iframe width="3424" height="1120" src="https://www.youtube.com/embed/6LG0MUOXmeU" title="OceanLabs Remote Sensing Buoy 1080p" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </Card.Body>
-                        <Card.Img class="img-responsive center-block"  src={buoy}/>
-                        <Card.Body>
-                            <p style={{padding:"1rem"}}>We are able to design and deploy leading-edge hardware, software and analysis tools for 
-                            researchers and conservation workers in the Indian Ocean.</p>
-                            <Link to={'/facility'}>
-                                <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Visit our aquaculture monitoring demo</Button>
-                            </Link>
-                            <br/><br/>
-                        </Card.Body>
-                    </Card>
-                    <br/>
-                </Col>
-                <Col className="m-auto align-self-center" xs={12} sm={6} md={4} style={titleStyle}>
-                    <Card style={{background: "rgba(255,255,255,0.75)",}}>
-                        <Card.Title>
-                            <h1 style={{paddingTop:"2rem"}}>Remote<b> Sensing</b></h1>
-                        </Card.Title>
-                        <Card.Img class="img-responsive center-block"  src={cousinMap}/>
-                        <Card.Body>
-                            <p style={{padding:"1rem"}}>Our devices can collect data in even the most remote ocean and island locations, 
-                            safely transmitting that data to where your team needs it.
-                            </p>
-                            <Link to={'/buoylive'}>
-                                <Button style={{width:'100%'}}
-                                        className="btn btn-primary"> Explore our remote sensing buoy demo</Button>
-                            </Link>
-                            <br/><br/>
-                        </Card.Body>
-                    </Card>
-                    <br/>
-                </Col>
-            </Row>
+        <Container maxW="7xl">
+            <Hero mt={"1rem"}/>
+            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} my={6}>
+                <ServiceBox
+                    title="SeaScope"
+                    description="Highly configurable smart sonde - record audio, video, and water quickly and conveniently."
+                    url="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExejJ0YWY1NDNheHJjZHNlZnZmd3JhNm1tcGl3ZTc2dm52Z28xeXhlZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gNWUQmbwXyMVxf9T0V/giphy-downsized-large.gif"
+                />
+                <ServiceBox
+                    title="Phoenix"
+                    description="Solar and iridium equiped remote sensing buoy - made from recycled FAD buoys."
+                    url="https://i.ibb.co/gS0rcX4/pheonix-top.png"
+                />
+                <ServiceBox
+                    title="FieldScribe"
+                    description="Manage your teams field data quickly and efficiently. Build forms once and share."
+                    url="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWs2ejJqYmF4NWoxeXBzbmY2bjVqa2M5a2hneDlkbGg1YTBnNWJlbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jQpGNXodR57jhirFjn/giphy.gif"
+                />
 
-        </div>
-
+            </SimpleGrid>
+            <Spacer/>
+            {/* Footer */}
+            <Flex justifyContent="space-between" py={4} borderTop="1px" borderColor="gray.200">
+                <Text>Oceanlabs Seychelles © 2024</Text>
+                <Flex>
+                    <Link href="mailto:info@oceanlabs.io" mx={2}>Contact: info@oceanlabs.io</Link>
+                </Flex>
+            </Flex>
+        </Container>
     );
 }
+
+// Service Box Component
+const ServiceBox = ({ title, description, url }) => (
+    <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
+        <Heading fontSize="xl">{title}</Heading>
+        <Image src={url}/>
+        <Text mt={4}>{description}</Text>
+    </Box>
+);
+
+export default HomePage;
