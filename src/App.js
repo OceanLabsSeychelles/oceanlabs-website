@@ -40,7 +40,7 @@ function App() {
             <ChakraProvider theme={theme}>
                 <SampleDataProvider>
                     <BrowserRouter>
-                        <Header/>
+                        {/*<Header/>*/}
                         <Routes>
                             <Route index element={<Home/>}/>
                             <Route path="buoy" element={<Buoy/>}/>

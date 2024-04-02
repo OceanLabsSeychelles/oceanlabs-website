@@ -1,14 +1,15 @@
 import React from "react";
-import { chakra, Box, useColorModeValue } from "@chakra-ui/react";
-const sample = require("../media/website_bg.mp4")
+import {EmailIcon} from "@chakra-ui/icons";
+import {chakra, Box, useColorModeValue, Spacer, Button, Link, Flex, HStack} from "@chakra-ui/react";
+const sample = require("../media/website_bg.mp4");
+
 export default function Hero() {
-    // Determine the color mode for conditional styling
     const textColor = useColorModeValue("gray.900", "white");
-    const overlayColor = useColorModeValue("rgba(0, 0, 0, .25)", "rgba(0, 0, 0, 0.5)");
+    const overlayColor = useColorModeValue("rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0)");
 
     const BackgroundVideoBox = ({ children }) => {
         return (
-            <Box position="relative" height="500px" width="full" overflow="hidden">
+            <Box position="relative" height="100vh" width="full" overflow="hidden">
                 <video
                     autoPlay
                     loop
@@ -18,10 +19,10 @@ export default function Hero() {
                         position: 'absolute',
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover', // Cover the entire box
+                        objectFit: 'cover',
                         top: '50%',
                         left: '50%',
-                        transform: 'translate(-50%, -50%)' // Center the video
+                        transform: 'translate(-50%, -50%)'
                     }}
                 >
                     <source src={sample} type="video/mp4" />
@@ -36,63 +37,70 @@ export default function Hero() {
                     display="flex"
                     flexDirection="column"
                     justifyContent="center"
-                    alignItems="center"
+                    alignItems={{ base: "center", lg: "start" }} // Responsive alignment
                     color="white"
+                    p={{ base: 4, sm: 6, lg: 8 }} // Added padding for spacing from the edges
                     style={{
                         backgroundColor: overlayColor,
-                        content: '""',
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "full",
-                        height: "full",
                     }}
-
                 >
-                    {children} {/* This is where your overlay content will go */}
+                    {children}
                 </Box>
             </Box>
         );
     };
 
-
     return (
-        <BackgroundVideoBox
-        >
+        <BackgroundVideoBox>
             <Box
-                px={{ base: 4, sm: 6, lg: 8 }}
-                pt={{ base: 10, sm: 12, md: 16, lg: 20, xl: 28 }}
-                pb={{ base: 8, sm: 16, md: 20, lg: 28, xl: 32 }}
-                textAlign={{ sm: "center", lg: "left" }}
-                color={textColor}
+                // pt={{ base: 10, sm: 12, md: 16, lg: 20, xl: 28 }}
+                // pb={{ base: 8, sm: 16, md: 20, lg: 28, xl: 32 }}
+                py = {10}
+                px={10}
+                backgroundColor={"rgba(1, 1, 1, .7)"}
+                borderRadius={10}
+                textAlign={{ base: "center", lg: "left" }} // Responsive text alignment
+                justifyContent={"flex-start"}
+                shadow={'lg'}
             >
                 <chakra.h1
                     fontSize={{ base: "4xl", sm: "5xl", md: "6xl" }}
                     letterSpacing="tight"
                     lineHeight="short"
                     fontWeight="extrabold"
-                    color="inherit"
+                    color="white"
                 >
                     <chakra.span display={{ base: "block", xl: "inline" }}>
                         OceanLabs{" "}
                     </chakra.span>
                     <chakra.span
                         display={{ base: "block", xl: "inline" }}
-                        color="blue.300"
-                        _dark={{ color: "blue.400" }}
+                        color="blue.200"
                     >
                         Seychelles
                     </chakra.span>
                 </chakra.h1>
-                <chakra.h2
-                    mt={{ base: 3, sm: 5, md: 5 }}
-                    maxW={{ sm: "xl" }}
+                <chakra.h4
+                    my={{ base: 3}}
                     mx={{ sm: "auto", lg: 0 }}
-                    color='gray.100'
-                    _dark={{color:"gray.300"}}
+                    color='gray.300'
                 >
-                   Your conservation engineering partners.
-                </chakra.h2>
+                    Your conservation engineering partners.
+                </chakra.h4>
+                <HStack>
+
+                    <Button mt={5} leftIcon={<EmailIcon />} colorScheme='blue' variant='solid'
+                            as="a"
+                            href="mailto:info@oceanlabs.io"
+                            _hover={{
+                                bg: 'inherit', // Adjust this value to match your desired hover background color
+                                color: 'inherit', // This sets the text color on hover. Change as needed.
+                            }}
+                    >
+                        Contact Us
+                    </Button>
+å                </HStack>
+                <Spacer/>
             </Box>
         </BackgroundVideoBox>
     );

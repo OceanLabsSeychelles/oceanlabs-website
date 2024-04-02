@@ -46,9 +46,7 @@ export default function App() {
                     <Link onClick={()=>{navigate("/")}}>
                     <Image src={logo} boxSize="60px" alt="Logo" />
                     </Link>
-                    <chakra.h1 fontSize="xl" fontWeight="medium" ml="2">
-                        Ocean<b>Labs</b>
-                    </chakra.h1>
+
                 </Flex>
                 <HStack spacing={1} display={{ base: 'none', md: 'flex' }}>
                     {navItems.map((item) => (
