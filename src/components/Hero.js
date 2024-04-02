@@ -1,7 +1,7 @@
 import React from "react";
 import {EmailIcon} from "@chakra-ui/icons";
 import {chakra, Box, useColorModeValue, Spacer, Button, Link, Flex, HStack} from "@chakra-ui/react";
-const sample = require("../media/website_bg.mp4");
+const sample = require("../media/bg_trim.mp4");
 
 export default function Hero() {
     const textColor = useColorModeValue("gray.900", "white");
