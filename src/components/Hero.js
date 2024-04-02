@@ -60,7 +60,7 @@ export default function Hero() {
                 backgroundColor={"rgba(1, 1, 1, .7)"}
                 borderRadius={10}
                 textAlign={{ base: "center", lg: "left" }} // Responsive text alignment
-                justifyContent={"flex-start"}
+                justifyContent={{base: "center", lg: "flex-start"}}
                 shadow={'lg'}
             >
                 <chakra.h1
@@ -87,8 +87,6 @@ export default function Hero() {
                 >
                     Your conservation engineering partners.
                 </chakra.h4>
-                <HStack>
-
                     <Button mt={5} leftIcon={<EmailIcon />} colorScheme='blue' variant='solid'
                             as="a"
                             href="mailto:info@oceanlabs.io"
@@ -99,7 +97,6 @@ export default function Hero() {
                     >
                         Contact Us
                     </Button>
-å                </HStack>
                 <Spacer/>
             </Box>
         </BackgroundVideoBox>
