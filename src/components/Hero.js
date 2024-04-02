@@ -13,6 +13,7 @@ export default function Hero() {
                     autoPlay
                     loop
                     muted
+                    preload="auto"
                     style={{
                         position: 'absolute',
                         width: '100%',
